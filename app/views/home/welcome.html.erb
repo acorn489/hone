@@ -1,0 +1,10 @@
+<body class="boundaries">
+<!-- render partials puts an external html file in the area it's called in. The name of the file has to start with an underscore. the next line renders a partial in a folder called partials within the views and it's name is _navbar.html.erb -->
+	<%= render partial: "partials/navbar" %>
+	<div class="welcome-content">
+		<div class="col-md-6"><%= link_to "I am a student", 
+			{:controller => 'students', :action => 'login'}, class: "btn btn-info btn-lg"  %></div>
+		<div class="col-md-6"><%= link_to "I am a developer", 
+			{:controller => 'developers', :action => 'login'}, class: "btn btn-info btn-lg" %></div>
+	</div>
+</body>

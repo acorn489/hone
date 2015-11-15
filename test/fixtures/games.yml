@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  platform: 1
+  status: 1
+  link: MyString
+  passing_score: 1
+
+two:
+  title: MyString
+  description: MyString
+  platform: 1
+  status: 1
+  link: MyString
+  passing_score: 1

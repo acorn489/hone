@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body class="boundaries">
+		<%= render partial: "partials/navbar" %>
+		<% if flash[:notice] %>
+			<div class="alert-info alert"><%= flash[:notice] %></div>
+		<% end %>
+		<h3><%= @course.title %></h3>
+		<%= @course.description %><br><br>
+		<h4>Domains:</h4>
+		<table class = "table table-striped", style = "width:80%">
+			<% @domains.each do |domain| %>
+				<tr>
+					<td>
+						<%= link_to domain.title,{
+							:controller => 'domains',
+							:id => domain.id,
+							:action => 'show'},
+							:method => :get,
+							class: "btn btn-success" %>
+					</td>
+				</tr>
+			<% end %>
+		</table>
+	</body>
+</html>
