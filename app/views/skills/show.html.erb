@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<body class="boundaries">
+		<%= render partial: "partials/navbar" %>
+		<% if flash[:notice] %>
+			<div class="alert-info alert"><%= flash[:notice] %></div>
+		<% end %>
+		<h3><%= @skill.title %></h3>
+		<%= @skill.description %><br><br>
+		<% if @primary_games.count > 0 %>
+			<table class = "table table-striped", style = "width:80%">
+				<h4>Primary Games</h4>
+				<tr>
+					<td>
+						Game
+					</td>
+					<td>
+						Description
+					</td>
+					<td>
+						Platform
+					</td>
+				</tr>
+				<% @primary_games.each do |game| %>
+					<tr>
+						<td>
+						<%= link_to game.link, :target => "_blank" do %>
+						<% game.title %>
+						<% end %>
+						</td>
+						<td>
+						<%= game.description %>
+						</td>
+						<td>
+						<% if game.platform == 1 %>
+							<%= "Android" %>
+						<% else %>
+							<%= "iOS" %>
+						<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+		<% end %>
+		<% if @secondary_games.count > 0 %>
+			<table class = "table table-striped", style = "width:80%">
+				<h4>Secondary Games</h4>
+				<tr>
+					<td>
+						Game
+					</td>
+					<td>
+						Description
+					</td>
+					<td>
+						Platform
+					</td>
+				</tr>
+				<% @secondary_games.each do |game| %>
+					<tr>
+						<td>
+						<%= link_to game.link, :target => "_blank" do %>
+						<% game.title %>
+						<% end %>
+						</td>
+						<td>
+						<%= game.description %>
+						</td>
+						<td>
+						<% if game.platform == 1 %>
+							<%= "Android" %>
+						<% else %>
+							<%= "iOS" %>
+						<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+		<% end %>
+		<%= link_to "Add a game",{:controller => 'games', :id => @skill.id, :action => 'new'},
+			:method => :get,
+			class: "btn btn-primary" %>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<%= link_to "Hone", {:controller => 'home', :action => 'welcome'}, class: "navbar-brand" %>
+		</div>
+	<div>
+	<% if session[:user_id] %>
+		<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Logout", {:controller => 'students', :action => 'logout'} %>
+			</li>
+		</ul>
+	<% end %>
+</nav>
