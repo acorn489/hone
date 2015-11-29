@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 20151018030000) do
 
   add_index "passes", ["skill_id"], name: "index_passes_on_skill_id", using: :btree
   add_index "passes", ["student_id", "skill_id"], name: "index_passes_on_student_id_and_skill_id", using: :btree
-  add_index "passes", ["student_id"], name: "index_passes_on_student_id", using: :btree
 
   create_table "scores", force: :cascade do |t|
     t.integer  "correct_answers",     limit: 4
