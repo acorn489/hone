@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018030000) do
+ActiveRecord::Schema.define(version: 20151129204752) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -20,14 +20,10 @@ ActiveRecord::Schema.define(version: 20151018030000) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "developers", force: :cascade do |t|
-    t.string   "username",        limit: 255
-    t.string   "password_digest", limit: 255
-    t.string   "email",           limit: 255
-    t.date     "dob"
-    t.integer  "age",             limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+  create_table "developer_profiles", force: :cascade do |t|
+    t.string   "email",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "domains", force: :cascade do |t|
@@ -108,15 +104,11 @@ ActiveRecord::Schema.define(version: 20151018030000) do
   add_index "skills", ["domain_id"], name: "index_skills_on_domain_id", using: :btree
   add_index "skills", ["locked_skill_id"], name: "index_skills_on_locked_skill_id", using: :btree
 
-  create_table "students", force: :cascade do |t|
-    t.string   "username",        limit: 255
-    t.string   "password_digest", limit: 255
-    t.string   "email",           limit: 255
+  create_table "student_profiles", force: :cascade do |t|
+    t.string   "email",      limit: 255
     t.date     "dob"
-    t.integer  "age",             limit: 4
-    t.integer  "score",           limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "unlocks", force: :cascade do |t|
@@ -128,6 +120,17 @@ ActiveRecord::Schema.define(version: 20151018030000) do
 
   add_index "unlocks", ["game_id"], name: "index_unlocks_on_game_id", using: :btree
   add_index "unlocks", ["student_id"], name: "index_unlocks_on_student_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.integer  "profile_id",      limit: 2
+    t.string   "username",        limit: 255
+    t.string   "password_digest", limit: 255
+    t.string   "type",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "users", ["profile_id"], name: "index_users_on_profile_id", using: :btree
 
   add_foreign_key "skills", "domains"
 end
