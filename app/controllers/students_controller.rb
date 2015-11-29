@@ -34,12 +34,4 @@ class StudentsController < ApplicationController
 		end
 	end
 
-	def logout
-			session[:user_id] = nil
-			session[:username] = nil
-			session[:user_type] = nil
-			flash[:notice] = "Logged Out"
-			redirect_to(:controller => 'home', :action => "welcome")
-	end
-
 end
