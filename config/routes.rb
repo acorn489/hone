@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post "access/attempt_login"
   get "access/logout"
   get "access/login"
+  get "access/home"
+
+  get "admin/home"
 
   get "students/home"
 

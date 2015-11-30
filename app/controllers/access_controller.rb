@@ -1,4 +1,7 @@
 class AccessController < ApplicationController
+	def home
+		redirect_to(:controller => 'access', :action => "login")
+	end
 
 	def logout
 		session[:user_id] = nil
@@ -9,11 +12,11 @@ class AccessController < ApplicationController
 
 	def login
 		if session[:user_id]
-      if(session[:return_to])
+			if(session[:return_to])
 				redirect_to session.delete(:return_to)
-      else
-        redirect_to(:controller => home_controller, :action => 'home')
-      end
+			else
+				redirect_to(:controller => home_controller, :action => 'home')
+			end
 		end
 	end
 
@@ -30,11 +33,11 @@ class AccessController < ApplicationController
 			studentMessage = "You are logged in. Have fun learning new things everyday with Hone!"
 			developerMessage = "You are logged in. Have fun developing for Hone!"
 			flash[:notice] = current_user.is_a?(Developer) ? developerMessage : studentMessage;
-      if(session[:return_to])
+			if(session[:return_to])
 				redirect_to session.delete(:return_to)
-      else
-        redirect_to(:controller => home_controller, :action => 'home')
-      end
+			else
+				redirect_to(:controller => home_controller, :action => 'home')
+			end
 		else
 			flash[:notice] = "Invalid username or password"
 			redirect_to(:action => 'login')

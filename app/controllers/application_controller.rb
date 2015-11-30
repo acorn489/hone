@@ -34,7 +34,11 @@ class ApplicationController < ActionController::Base
 	end
 
 	def home_controller
-		return current_user.is_a?(Developer) ? 'developers' : 'students'
+		if current_user
+			lowercase_name = current_user.class.name.downcase;
+			return lowercase_name + (lowercase_name != "admin" ? 's' : '')
+		end
+		return 'access'
 	end
 
 	helper_method :home_controller
