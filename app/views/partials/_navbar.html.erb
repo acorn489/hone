@@ -6,7 +6,7 @@
 	<div>
 	<% if session[:user_id] %>
 		<ul class="nav navbar-nav navbar-right">
-			<li><%= link_to "Logout", {:controller => 'students', :action => 'logout'} %>
+			<li><%= link_to "Logout", {:controller => 'home', :action => 'logout'} %>
 			</li>
 		</ul>
 	<% end %>
