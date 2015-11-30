@@ -1,4 +1,7 @@
 class SkillsController < ApplicationController
+	before_action do
+		authenticate(Developer)
+	end
 
 	def show
 		@skill = Skill.find_by_id(params[:id])

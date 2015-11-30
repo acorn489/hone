@@ -1,11 +1,13 @@
 class CoursesController < ApplicationController
 
 	def developers_show
+		authenticate(Developer)
 		@course = Course.find_by_id(params[:id])
 		@domains = @course.domains
 	end
 
 	def students_show
+		authenticate(Student)
 		@course = Course.find_by_id(params[:id])
 		level = Level.where(:course_id => params[:id], :student_id => session[:user_id]).count
 		if level == 0
@@ -16,5 +18,5 @@ class CoursesController < ApplicationController
 		@domains.each do |domain|
 			@available_games_counts.push(domain.unlocked_games(session[:user_id]).count)
 		end
-	end	
+	end
 end

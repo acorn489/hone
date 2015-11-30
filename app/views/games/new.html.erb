@@ -2,9 +2,7 @@
 <html lang="en">
 	<body class="boundaries">
 		<%= render partial: "partials/navbar" %>
-		<% if flash[:notice] %>
-			<div class="alert-info alert"><%= flash[:notice] %></div>
-		<% end %>
+		<%= render partial: "partials/flash" %>
 		<div class="login-form form-horizontal">
 			<%= form_for @game, url: {action: "create"}, html: {class: "form-group nifty_form"} do |f| %>
 				<div class="form-group">
@@ -27,9 +25,9 @@
 				</div>
 				<div class="form-group">
 					<%= f.label "Passing Score:", class: 'control-label col-sm-2' %><br>
-					
+
 						<%= f.text_field :passing_score, placeholder: "any float value <= 10" %><br>
-					
+
 				</div>
 				<div class="form-group">
 					<%= f.label "Platform", class: 'control-label col-sm-2' %><br>
@@ -49,10 +47,10 @@
 </html>
 
 
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 
