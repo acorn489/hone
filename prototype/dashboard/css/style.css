@@ -1,11 +1,110 @@
-.crop {
-    width: 100%;
-    overflow: hidden;
+/* Nav bar */
+/*submenu */
+.submenu{
+  background-color: #3780BF;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+}
+
+.button-link {
+  border-radius: 10px 10px 10px 10px;
+  border: 2px solid white;
+  color: #0099cc;
+
+}
+
+.navbar-nav .button-link {
+  line-height: 0px;
+  top: 8px;
+  height: 30px;
+}
+
+.button-link a {
+  padding-top: 10px;
+}
+
+.submenu a {
+  color: white;
+  font-weight: bold;
+}
+
+.submenu ul.nav a:hover {
+  color: #FFF !important;
+  background-color: #FF5252 !important;
+}
+
+#nav-radius{
+  position: absolute;
+  left: 60%;
+  top: 10px;
+}
+
+
+.ribbon {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    width: 60%;
+    height: 40px;
+    background: #fff;
+}
+
+#classInfo{
+  height: 40px;
+  width: 40px;
+
+}
+
+/* menu */
+
+.menu {
+    border-bottom: 4px solid #f1f1f1;
+    height: 54px;
+}
+
+.menu ul li a {
+    border-bottom: 4px solid transparent;
+    margin-bottom: -4px;
+}
+
+.menu a {
+  color: black;
+  font-weight: bold;
+}
+
+.menu ul.nav a:hover {
+  color: #FF5252 !important;
+  border-color: #FF5252 !important;
+  background-color: white !important;
+}
+
+.active a {
+  color: #FF5252 !important;
+  border-color: #FF5252 !important;
+  background-color: #FFF !important;
+}
+
+/* body */
+body{
+  font-family: OpenSans;
+}
+
+/* Class Level */
+
+#classProgress{
+  width: 70%;
+}
+
+#classTitle{
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* Course */
 .coursesRow{
-  width: 100%;
+  width: 80%;
   height: 300px;
   padding-left: 10px;
   margin-top: 10px;
@@ -14,12 +113,11 @@
 
 .courseRowHeader h1{
   display: inline;
-  margin-left: 30px;
 }
 
 .courseRowHeader button{
-  margin-right: 10px;
-  margin-top: 10px;
+  margin-right: 48px;
+  margin-top: 5px;
 }
 
 .course{
@@ -58,6 +156,7 @@
   height: 55px;
   text-align: center;
   padding: 0 10px 0 10px;
+  margin-top: 3px;
 }
 
 .details .progress{
@@ -76,6 +175,19 @@
   width: 90%;
 }
 
+#musicProgress{
+  width: 100%;
+}
+
+#religionProgress{
+  width: 100%;
+}
+
+#artProgress{
+  width: 20%;
+  color: black;
+}
+
 .progress span {
     position: absolute;
     display: block;
@@ -90,7 +202,6 @@
     margin-top: 3px;
     min-height: 17px;
     color: black;
-
 }
 
 ul li{
