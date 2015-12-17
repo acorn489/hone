@@ -1,0 +1,98 @@
+.crop {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Course */
+.coursesRow{
+  width: 100%;
+  height: 300px;
+  padding-left: 10px;
+  margin-top: 10px;
+  background-color: #eee;
+}
+
+.courseRowHeader h1{
+  display: inline;
+  margin-left: 30px;
+}
+
+.courseRowHeader button{
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.course{
+  box-shadow: 1px 0px 1px grey;
+  width: 150px;
+  margin-top: 20px;
+}
+
+.courseRowBody li {
+  margin-left: 30px;
+}
+.courseRowBody li:first-child{
+  margin-left: 0px;
+}
+
+.course a{
+  display: block;
+}
+
+.courseLink:hover{
+  text-decoration: none;
+}
+
+.courseImage img{
+  width: 100%;
+}
+
+.courseImage {
+  width: 150px;
+  height: 150px;
+  background-color: #151515;
+}
+
+.details{
+  background-color: white;
+  height: 55px;
+  text-align: center;
+  padding: 0 10px 0 10px;
+}
+
+.details .progress{
+  margin-top: 3px;
+}
+
+.progress {
+    position: relative;
+}
+
+#mathProgress{
+  width: 70%;
+}
+
+#englishProgress{
+  width: 90%;
+}
+
+.progress span {
+    position: absolute;
+    display: block;
+    width: 100%;
+ }
+
+
+.title {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 0px;
+    margin-top: 3px;
+    min-height: 17px;
+    color: black;
+
+}
+
+ul li{
+  display: inline-block;
+}
