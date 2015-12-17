@@ -31,7 +31,7 @@
 
 .submenu ul.nav a:hover {
   color: #FFF !important;
-  background-color: #FF5252 !important;
+  background-color: #3780BF !important;
 }
 
 #nav-radius{
@@ -51,17 +51,12 @@
     background: #fff;
 }
 
-#classInfo{
-  height: 40px;
-  width: 40px;
-
-}
-
 /* menu */
 
 .menu {
     border-bottom: 4px solid #f1f1f1;
     height: 54px;
+    background-color: white;
 }
 
 .menu ul li a {
@@ -75,14 +70,18 @@
 }
 
 .menu ul.nav a:hover {
-  color: #FF5252 !important;
-  border-color: #FF5252 !important;
+  color: #3780BF !important;
+  border-color: #3780BF !important;
   background-color: white !important;
 }
 
+.menu.navbar-fixed-top{
+  padding-right: 15px;
+}
+
 .active a {
-  color: #FF5252 !important;
-  border-color: #FF5252 !important;
+  color: #3780BF !important;
+  border-color: #3780BF !important;
   background-color: #FFF !important;
 }
 
@@ -91,33 +90,57 @@ body{
   font-family: OpenSans;
 }
 
-/* Class Level */
+.content .gradeContainer{
+  margin: auto;
+}
 
-#classProgress{
+.content .mainContainer{
+  margin: auto;
+}
+
+/* grade Container */
+
+.gradeContainer{
+  text-align: center;
+  width: 90%;
+  height: 200px;
+  background-color: white;
+}
+
+#gradeInfo{
+  height: 150px;
+  width: 150px;
+}
+
+.bigProgress{
+  width: 500px;
+  margin: auto;
+}
+
+#gradeProgress{
   width: 70%;
 }
 
-#classTitle{
+/* MainContainer */
+.mainContainer{
   text-align: center;
-  margin-bottom: 20px;
+  background-color: white;
+  width: 90%;
+  height: 30em;
 }
 
 /* Course */
 .coursesRow{
-  width: 80%;
+  width: 90%;
   height: 300px;
-  padding-left: 10px;
-  margin-top: 10px;
+  margin: auto;
   background-color: #eee;
 }
 
 .courseRowHeader h1{
-  display: inline;
-}
-
-.courseRowHeader button{
-  margin-right: 48px;
-  margin-top: 5px;
+  margin-top: 0px;
+  text-align: left;
+  margin-left: 60px;
 }
 
 .course{
@@ -126,11 +149,19 @@ body{
   margin-top: 20px;
 }
 
+.courseRowBody {
+  text-align: left !important;
+}
+
 .courseRowBody li {
   margin-left: 30px;
 }
 .courseRowBody li:first-child{
-  margin-left: 0px;
+  margin-left: 70px;
+}
+
+.courseRowBody ul{
+  padding-left: 0px !important;
 }
 
 .course a{
@@ -163,10 +194,6 @@ body{
   margin-top: 3px;
 }
 
-.progress {
-    position: relative;
-}
-
 #mathProgress{
   width: 70%;
 }
@@ -188,12 +215,15 @@ body{
   color: black;
 }
 
+.progress {
+    position: relative;
+}
+
 .progress span {
     position: absolute;
     display: block;
     width: 100%;
  }
-
 
 .title {
     font-size: 14px;
@@ -206,4 +236,60 @@ body{
 
 ul li{
   display: inline-block;
+}
+
+/* Carousel */
+.carousel-indicators{
+  top: 230px !important;
+  left: 46% !important;
+}
+
+.carousel-indicators li{
+  border: 1px solid grey !important;
+}
+
+.carousel-indicators .active{
+  background-color: grey !important;
+}
+
+.carousel-control{
+  color: black !important;
+}
+
+.carousel-control.right{
+  height: 50px;
+  width: 50px;
+  color: black;
+  background-image: none !important;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.carousel-control.left{
+  height: 50px;
+  width: 50px;
+  color: black;
+  background-image: none !important;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.carousel-control:hover,
+.carousel-control:focus{
+  color: black !important;
+}
+
+
+/* footer */
+#copyright {
+    text-align: center;
+    display: block;
+    line-height: 40px;
+}
+
+footer {
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    border-top: 4px solid #f1f1f1;
 }
