@@ -1,13 +1,13 @@
 class CoursesController < ApplicationController
 
 	def developers_show
-		authenticate(Developer)
+		authorizeRole(Developer)
 		@course = Course.find_by_id(params[:id])
 		@domains = @course.domains
 	end
 
 	def students_show
-		authenticate(Student)
+		authorizeRole(Student)
 		@course = Course.find_by_id(params[:id])
 		level = Level.where(:course_id => params[:id], :student_id => session[:user_id]).count
 		if level == 0
