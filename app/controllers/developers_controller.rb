@@ -1,6 +1,6 @@
 class DevelopersController < ApplicationController
 	before_action except: [:login, :attempt_login, :logout] do
-		authenticate(Developer)
+		authorizeRole(Developer)
 	end
 
 	def home

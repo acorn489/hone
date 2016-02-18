@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
 	before_action do
-		authenticate(Developer)
+		authorizeRole(Developer)
 	end
 
 	def show
@@ -9,4 +9,3 @@ class SkillsController < ApplicationController
 		@secondary_games = @skill.secondary_games
 	end
 end
-
