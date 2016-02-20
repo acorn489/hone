@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
-	def authorizeRole(role)
+	def authorize_role(role)
 		raise NotAuthorized unless is_a?role
 	end
 

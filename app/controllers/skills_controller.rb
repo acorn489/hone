@@ -1,6 +1,6 @@
 class SkillsController < ApplicationController
 	before_action do
-		authorizeRole(Developer)
+		authorize_role(Developer)
 	end
 
 	def show

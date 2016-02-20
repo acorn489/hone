@@ -14,9 +14,9 @@ class ApplicationController < ActionController::Base
 		session[:return_to] = request.fullpath if request.get? && request.fullpath != "/students/home"
 	end
 
-	def authorizeRole(role)
+	def authorize_role(role)
 		raise NoSession unless session[:user_id]
-		current_user.authorizeRole(role)
+		current_user.authorize_role(role)
 	end
 
 	def home_controller
