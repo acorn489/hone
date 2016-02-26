@@ -1,11 +1,9 @@
-class StudentsController < ApplicationController
-
+class HomeController < ApplicationController
 	before_action except: [:login, :attempt_login, :logout] do
-		authorize_role(Student)
+    verify_session
 	end
 
-	def home
+	def show
 		@courses = Course.all
 	end
-
 end

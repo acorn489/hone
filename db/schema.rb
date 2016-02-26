@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130073508) do
+ActiveRecord::Schema.define(version: 20160220163142) do
 
   create_table "admin_profiles", force: :cascade do |t|
     t.string   "email",                  limit: 255
@@ -24,7 +24,10 @@ ActiveRecord::Schema.define(version: 20151130073508) do
     t.string   "description", limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "slug",        limit: 255
   end
+
+  add_index "courses", ["slug"], name: "index_courses_on_slug", using: :btree
 
   create_table "developer_profiles", force: :cascade do |t|
     t.string   "email",      limit: 255
@@ -39,9 +42,11 @@ ActiveRecord::Schema.define(version: 20151130073508) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "screening_title", limit: 255
+    t.string   "slug",            limit: 255
   end
 
   add_index "domains", ["course_id"], name: "index_domains_on_course_id", using: :btree
+  add_index "domains", ["slug"], name: "index_domains_on_slug", using: :btree
 
   create_table "games", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -79,6 +84,7 @@ ActiveRecord::Schema.define(version: 20151130073508) do
 
   add_index "passes", ["skill_id"], name: "index_passes_on_skill_id", using: :btree
   add_index "passes", ["student_id", "skill_id"], name: "index_passes_on_student_id_and_skill_id", using: :btree
+  add_index "passes", ["student_id"], name: "index_passes_on_student_id", using: :btree
 
   create_table "scores", force: :cascade do |t|
     t.integer  "correct_answers",     limit: 4
@@ -105,10 +111,12 @@ ActiveRecord::Schema.define(version: 20151130073508) do
     t.integer  "level",           limit: 4
     t.integer  "locked_skill_id", limit: 4
     t.integer  "course_id",       limit: 4
+    t.string   "slug",            limit: 255
   end
 
   add_index "skills", ["domain_id"], name: "index_skills_on_domain_id", using: :btree
   add_index "skills", ["locked_skill_id"], name: "index_skills_on_locked_skill_id", using: :btree
+  add_index "skills", ["slug"], name: "index_skills_on_slug", using: :btree
 
   create_table "student_profiles", force: :cascade do |t|
     t.string   "email",      limit: 255

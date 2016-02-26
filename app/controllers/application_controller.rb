@@ -11,18 +11,24 @@ class ApplicationController < ActionController::Base
 	end
 
 	def store_location
-		session[:return_to] = request.fullpath if request.get? && request.fullpath != "/students/home"
+		session[:return_to] = request.fullpath if request.get? && request.fullpath != "/home"
+	end
+
+	def verify_session
+		raise NoSession unless session[:user_id]
 	end
 
 	def authorize_role(role)
-		raise NoSession unless session[:user_id]
+		verify_session
 		current_user.authorize_role(role)
 	end
 
 	def home_controller
+		if current_user.is_a? Admin
+			return 'admin'
+		end
 		if current_user
-			lowercase_name = current_user.class.name.downcase;
-			return lowercase_name + (lowercase_name != "admin" ? 's' : '')
+			return 'home'
 		end
 		return 'access'
 	end

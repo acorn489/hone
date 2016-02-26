@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 
 	def new
 		authorize_role(Developer)
-		@skill = Skill.find_by_id(params[:id])
+		@skill = Skill.friendly.find(params[:skill])
 		@game = Game.new
 	end
 
