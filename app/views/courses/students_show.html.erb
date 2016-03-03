@@ -13,7 +13,7 @@
 					<td>
 						<%= link_to domain.screening_title ,{
 							:controller => 'domains',
-							:slug => domain.slug,
+							:id => domain.id,
 							:action => 'game_store'},
 							:method => :get,
 							class: "btn btn-success" %>

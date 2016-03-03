@@ -1,0 +1,78 @@
+<% content_for :title, "Home" %>
+<%= render partial: "partials/navbar" %>
+
+<div class="content">
+
+  <section id="sectionTop" class="headImage">
+    <div class="imgContainer bg_greydark">
+      <img src="http://themes.newgraphicses.it/baby-kids/wp/demo/wp-content/uploads/2015/01/img-courses.jpg" alt="" />
+    </div>
+  </section>
+  <div class="horizontalLine gradient"></div>
+
+<section id="sectionCourse" class="body">
+  <div class="courseRow">
+    <div class="courseRowHeader">
+      <div class="carousel-control">
+        <a id="prev" class="prev control" href="#">&lt;</a>
+        <a id="next" class="next control" href="#">&gt;</a>
+      </div>
+      <h1 class="sectionTitle">My Courses</h1>
+    </div>
+    <div class="courseRowBody">
+      <div class="carousel-list">
+        <ul id="yourCourseList">
+          <% @courses.each do |course| %>
+          <li>
+            <a class="courseLink" href="course?course=math">
+              <div class="course" id="mathCourse">
+                  <div class="imgContainer">
+                      <div class="mathIcon">
+                        <div class="color-box transparent-red">
+                        </div>
+                      </div>
+                  </div>
+                <div class="details">
+                  <div class="title"><%= course.title %></div>
+                  <div class="status">
+                    <div class="gradeContainer">
+                      <img src="https://cdn2.iconfinder.com/data/icons/navigation-16/64/one_menu_nav_navigation_number-512.png" alt="" />
+                    </div>
+                    <div class="progress">
+                      <div class="progress-style progress-math"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render partial: "partials/footer" %>
+
+  <script>
+  $(document).ready(function() {
+      $('#yourCourseList').carouFredSel({
+        responsive: true,
+        width: '100%',
+        prev: '#prev',
+        next: '#next',
+        auto: false,
+        scroll: {
+          items: 1
+        },
+        items: {
+          visible: {
+            min: 1,
+            max: 5
+          }
+        }
+      });
+  });
+  </script>
+</html>

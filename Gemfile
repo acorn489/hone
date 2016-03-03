@@ -47,4 +47,3 @@ group :development, :test do
   gem 'responders', '~> 2.0'
 end
 
-gem 'friendly_id'
