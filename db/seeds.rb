@@ -6,8 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-student = Student.create(username: 'Husseny', password: '1234', email: 'husseny@123')
-developer = Developer.create(username: 'Marco', password: '1234', email: 'marco@123')
+student_profile = StudentProfile.create(email: 'husseny@123')
+developer_profile = DeveloperProfile.create(email: 'marco@123')
+admin_profile = DeveloperProfile.create(email: 'admin@123')
+
+Student.create(username: 'Husseny', password: '1234', profile_id: 1)
+Developer.create(username: 'Marco', password: '1234', profile_id: 1)
+Admin.create(username: 'Admin', password: '1234', profile_id: 1)
 
 courses = Course.create([{title: 'Mathematics', description: 'This is a course to teach Maths to grades 1 and 2 using the common core standards.'}, {title: 'English', description: 'This is an English course that is taught using the common core standards.'}])
 

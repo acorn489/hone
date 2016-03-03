@@ -1,7 +1,5 @@
-class Student < ActiveRecord::Base
-
-	has_secure_password
-
+class Student < User
+  has_one :student_profile
 	has_many :scores, dependent: :destroy
 	has_many :games, :through => :scores
 	has_many :passes, dependent: :destroy
@@ -10,7 +8,4 @@ class Student < ActiveRecord::Base
 	has_many :courses, :through => :levels
 	has_many :unlocks, dependent: :destroy
 	has_many :games, :through => :unlocks
-
-	validates :username, :password_digest, :email, presence: true
-
 end

@@ -2,9 +2,7 @@
 <html lang="en">
 	<body class="boundaries">
 		<%= render partial: "partials/navbar" %>
-		<% if flash[:notice] %>
-			<div class="alert-info alert"><%= flash[:notice] %></div>
-		<% end %>
+		<%= render partial: "partials/flash" %>
 		<h3><%= @skill.title %></h3>
 		<%= @skill.description %><br><br>
 		<% if @primary_games.count > 0 %>
@@ -77,7 +75,8 @@
 				<% end %>
 			</table>
 		<% end %>
-		<%= link_to "Add a game",{:controller => 'games', :id => @skill.id, :action => 'new'},
+		<%= link_to "Add a game",
+			{:controller => 'games', :skill => @skill.slug, :action => 'new'},
 			:method => :get,
 			class: "btn btn-primary" %>
 	</body>

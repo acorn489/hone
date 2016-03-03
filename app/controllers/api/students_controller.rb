@@ -14,7 +14,6 @@ class Api::StudentsController < Api::BaseController
 		if authorized_user
 			session[:user_id] = authorized_user.id
 			session[:username] = authorized_user.username
-			session[:user_type] = "student"
 			render :json => true
 		else
 			render :json => false
