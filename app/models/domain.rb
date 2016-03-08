@@ -6,11 +6,10 @@ class Domain < ActiveRecord::Base
 	friendly_id :title, use: :slugged
 
 	#A method to retrieve all the unlocked games within a domain for a certain student
-	def unlocked_games(student_id)
+	def unlocked_games(student)
 		games = Array.new
 		unlocked_games = Array.new
 		skills = self.skills
-		student = Student.find_by_id(student_id)
 		games = student.games
 		games.each do |game|
 			if game.primary_skill.in?(skills)

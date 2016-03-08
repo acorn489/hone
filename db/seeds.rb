@@ -5,14 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-student_profile = StudentProfile.create(email: 'husseny@123')
-developer_profile = DeveloperProfile.create(email: 'marco@123')
-admin_profile = DeveloperProfile.create(email: 'admin@123')
-
-Student.create(username: 'Husseny', password: '1234', profile_id: 1)
-Developer.create(username: 'Marco', password: '1234', profile_id: 1)
-Admin.create(username: 'Admin', password: '1234', profile_id: 1)
+Student.create! :name => 'Husseny', :email => 'husseny@web.de', :password => '12341234', :password_confirmation => '12341234'
+Developer.create! :name => 'Marco', :email => 'marco@web.de', :password => '12341234', :password_confirmation => '12341234'
+Admin.create! :name => 'Admin', :email => 'admin@web.de', :password => '12341234', :password_confirmation => '12341234'
 
 courses = Course.create([{title: 'Mathematics', description: 'This is a course to teach Maths to grades 1 and 2 using the common core standards.'}, {title: 'English', description: 'This is an English course that is taught using the common core standards.'}])
 
@@ -239,4 +234,3 @@ game = Game.new(title: 'Build a tower 2', description: 'A long description here'
 game.primary_skill = Skill.fourth
 game.secondary_skill = Skill.second
 game.save
-

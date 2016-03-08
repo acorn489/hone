@@ -1,7 +1,6 @@
 <div class="content">
 	<div class="login-form form-horizontal">
-		<%= render partial: "partials/flash" %>
-		<%= form_tag(:action => 'attempt_login')do %>
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do %>
 			<div class="form-group">
 				<%= label_tag :username, "Username:", class: 'control-label col-sm-2' %>
 				<div class=" col-sm-10">

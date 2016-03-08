@@ -3,19 +3,18 @@
     <div class="horizontalLine bg_gardient"></div>
     <div class="nav-left">
       <div class="title">
-        <%= link_to "Hone", {:controller => home_controller, :action => 'show'}, class: "navbar-brand" %>
+        <%= link_to "Hone", {:controller => '/welcome', :action => 'show'}, class: "navbar-brand" %>
       </div>
       <ul id="navList">
-        <li><a class="navLink" href="#">Home</a></li>
-        <li><a class="navLink" href="#">Courses</a></li>
-        <li><a class="navLink" href="#">Skills</a></li>
         <li><a class="navLink" href="#">Contact</a></li>
+        <% if user_signed_in? %>
+            <li><%= link_to 'Profile', edit_user_registration_path, class: 'navLink' %></li>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'navLink' %></li>
+        <% else %>
+          <li><%= link_to 'Log In', new_user_session_path, class: 'navLink' %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path, class: 'navLink' %></li>
+        <% end %>
       </ul>
-    </div>
-    <div class="nav-right">
-      <% if session[:user_id] %>
-        <%= link_to "Logout", {:controller => 'access', :action => 'logout'}, class: "buttonLink buttonOrange" %>
-	    <% end %>
     </div>
   </nav>
 </header>

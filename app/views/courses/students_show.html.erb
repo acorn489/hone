@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-	<body class="boundaries">
-		<%= render partial: "partials/navbar" %>
-		<%= render partial: "partials/flash" %>
-		<h3><%= @course.title %></h3>
-		<%= @course.description %><br><br>
-		<h4>What category would you like to play?</h4>
-		<table class = "table table-striped", style = "width:80%">
-			<% counter = 0 %>
-			<% @domains.each do |domain| %>
-				<tr>
-					<td>
-						<%= link_to domain.screening_title ,{
-							:controller => 'domains',
-							:slug => domain.slug,
-							:action => 'game_store'},
-							:method => :get,
-							class: "btn btn-success" %>
-					</td>
-					<td><%= @available_games_counts[counter] %> games available</td>
-				</tr>
-				<% counter += 1 %>
-			<% end %>
-		</table>
-	</body>
-</html>
+<h3><%= @course.title %></h3>
+<%= @course.description %><br><br>
+<h4>What category would you like to play?</h4>
+<table class = "table table-striped", style = "width:80%">
+	<% counter = 0 %>
+	<% @domains.each do |domain| %>
+		<tr>
+			<td>
+				<%= link_to domain.screening_title ,{
+					:controller => 'domains',
+					:slug => domain.slug,
+					:action => 'game_store'},
+					:method => :get,
+					class: "btn btn-success" %>
+			</td>
+			<td><%= @available_games_counts[counter] %> games available</td>
+		</tr>
+		<% counter += 1 %>
+	<% end %>
+</table>

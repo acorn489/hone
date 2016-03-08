@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-	<body class="boundaries">
-		<%= render partial: "partials/navbar" %>
-		<%= render partial: "partials/flash" %>
-		<h3><%= @course.title %></h3>
-		<%= @course.description %><br><br>
-		<h4>Domains:</h4>
-		<table class = "table table-striped", style = "width:80%">
-			<% @domains.each do |domain| %>
-				<tr>
-					<td>
-						<%= link_to domain.title,{
-							:controller => 'domains',
-							:slug => domain.slug,
-							:action => 'show'},
-							:method => :get,
-							class: "btn btn-success" %>
-					</td>
-				</tr>
-			<% end %>
-		</table>
-	</body>
-</html>
+<h4>Domains:</h4>
+<table class = "table table-striped", style = "width:80%">
+	<% @domains.each do |domain| %>
+		<tr>
+			<td>
+				<%= link_to domain.title,{
+					:controller => 'domains',
+					:slug => domain.slug,
+					:action => 'show'},
+					:method => :get,
+					class: "btn btn-success" %>
+			</td>
+		</tr>
+	<% end %>
+</table>

@@ -6,7 +6,7 @@ class Api::BaseController < ApplicationController
 	private
 
 	def confirm_logged_in
-		unless session[:user_id]
+		unless current_user
 			render :json => "Please log in"
 		end
 	end

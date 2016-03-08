@@ -1,5 +1,4 @@
 class Student < User
-  has_one :student_profile
 	has_many :scores, dependent: :destroy
 	has_many :games, :through => :scores
 	has_many :passes, dependent: :destroy

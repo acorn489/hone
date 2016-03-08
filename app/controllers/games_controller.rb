@@ -1,13 +1,12 @@
 class GamesController < ApplicationController
+	before_action :authenticate_developer!
 
 	def new
-		authorize_role(Developer)
 		@skill = Skill.friendly.find(params[:skill])
 		@game = Game.new
 	end
 
 	def create
-		authorize_role(Developer)
 		@skill = Skill.find_by_id(params[:id])
 		@game = Game.create(game_params)
 		if @game.save
@@ -17,7 +16,6 @@ class GamesController < ApplicationController
 			flash[:notice] = "Please fill all paramaters"
 			redirect_to :action => 'new', :id => game_params[:primary_skill_id]
 		end
-
 	end
 
 	private

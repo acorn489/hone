@@ -5,50 +5,41 @@ class ApplicationController < ActionController::Base
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
 
-	def current_user
-		return unless session[:user_id]
-		@current_user ||= User.find(session[:user_id])
-	end
+	%w(Student Developer Admin).each do |k|
+		define_method "current_#{k.underscore}" do
+			current_user if current_user.is_a?(k.constantize)
+		end
 
-	def store_location
-		session[:return_to] = request.fullpath if request.get? && request.fullpath != "/home"
-	end
-
-	def verify_session
-		raise NoSession unless session[:user_id]
-	end
-
-	def authorize_role(role)
-		verify_session
-		current_user.authorize_role(role)
+		define_method "authenticate_#{k.underscore}!" do
+			|opts={}| send("current_#{k.underscore}") || not_authorized
+		end
 	end
 
 	def home_controller
-		if current_user.is_a? Admin
+		if current_admin
 			return 'admin'
-		end
-		if current_user
+                elsif current_user
 			return 'home'
 		end
-		return 'access'
+		return 'welcome'
 	end
 
 	helper_method :home_controller
 
-	rescue_from User::NotAuthorized, with: :user_not_authorized
-	rescue_from NoSession, with: :no_session
+	before_action :configure_permitted_parameters, if: :devise_controller?
 
-	private
-	def user_not_authorized
+	def after_sign_in_path_for(resource)
+		stored_location_for(resource) || '/home'
+	end
+
+	def not_authorized
 		flash[:error] = "You don't have permission to access the requested page."
-		redirect_to(:controller => 'access', :action => 'login')
+		redirect_to(:controller => 'welcome', :action => 'show')
 	end
 
-	private
-	def no_session
-		flash[:notice] = "Please login to access this page."
-		store_location
-		redirect_to(:controller => 'access', :action => 'login')
+	protected
+	def configure_permitted_parameters
+		devise_parameter_sanitizer.for(:sign_up) << :name
+		 devise_parameter_sanitizer.for(:account_update) << :name
 	end
-
 end

@@ -1,8 +1,5 @@
 class HomeController < ApplicationController
-	before_action except: [:login, :attempt_login, :logout] do
-    verify_session
-	end
-
+	before_action :authenticate_user!
 	def show
 		@courses = Course.all
 	end

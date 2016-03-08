@@ -1,16 +1,9 @@
-<% content_for :title, "Home" %>
-<%= render partial: "partials/navbar" %>
-<%= render partial: "partials/flash" %>
-
-<div class="content">
-
-  <section id="sectionTop" class="headImage">
-    <div class="imgContainer bg_greydark">
-      <img src="http://themes.newgraphicses.it/baby-kids/wp/demo/wp-content/uploads/2015/01/img-courses.jpg" alt="" />
-    </div>
-  </section>
-  <div class="horizontalLine gradient"></div>
-
+<section id="sectionTop" class="headImage">
+  <div class="imgContainer bg_greydark">
+    <img src="http://themes.newgraphicses.it/baby-kids/wp/demo/wp-content/uploads/2015/01/img-courses.jpg" alt="" />
+  </div>
+</section>
+<div class="horizontalLine gradient"></div>
 <section id="sectionCourse" class="body">
   <div class="courseRow">
     <div class="courseRowHeader">
@@ -54,9 +47,6 @@
     </div>
   </div>
 </section>
-
-<%= render partial: "partials/footer" %>
-
 <script>
 $(document).ready(function() {
     $('#yourCourseList').carouFredSel({

@@ -8,8 +8,7 @@ class Course < ActiveRecord::Base
 
 	#A method called on the first time a student enters the course page.
 	#It initializes a level with value 1 for the student and unlocks the first level games for the student
-	def enroll(student_id)
-		student = Student.find_by_id(student_id)
+	def enroll(student)
 		level = Level.new
 		level.course = self
 		level.student = student
@@ -27,7 +26,7 @@ class Course < ActiveRecord::Base
 			first_level_games.each do |game|
 				unlock = Unlock.new
 				unlock.game = game
-				unlock.student_id = student_id
+				unlock.student_id = student.id
 				unlock.save
 			end
 		end

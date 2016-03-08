@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
-	before_action except: [:login, :attempt_login, :logout] do
-		authorize_role(Admin)
-	end
+  before_action :authenticate_admin!
+
+  def show
+  end
 end
