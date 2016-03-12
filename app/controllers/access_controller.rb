@@ -1,5 +1,5 @@
 class AccessController < ApplicationController
-	def home
+	def show
 		redirect_to(:controller => 'access', :action => "login")
 	end
 
@@ -15,7 +15,7 @@ class AccessController < ApplicationController
 			if(session[:return_to])
 				redirect_to session.delete(:return_to)
 			else
-				redirect_to(:controller => home_controller, :action => 'home')
+				redirect_to(:controller => home_controller, :action => 'show')
 			end
 		end
 	end
@@ -30,13 +30,16 @@ class AccessController < ApplicationController
 		if authorized_user
 			session[:user_id] = authorized_user.id
 			session[:username] = authorized_user.username
-			studentMessage = "You are logged in. Have fun learning new things everyday with Hone!"
-			developerMessage = "You are logged in. Have fun developing for Hone!"
-			flash[:notice] = current_user.is_a?(Developer) ? developerMessage : studentMessage;
+			user_message = {
+				Admin: "You are now logged in. Have fun administrating Hone!",
+				Student: "You are now logged in. Have fun learning new things with Hone everyday!",
+				Developer: "You are now logged in. Have fun developing for Hone!"
+			}
+			flash[:notice] = user_message[current_user.class.name.split('::').last.to_sym]
 			if(session[:return_to])
 				redirect_to session.delete(:return_to)
 			else
-				redirect_to(:controller => home_controller, :action => 'home')
+				redirect_to(:controller => home_controller, :action => 'show')
 			end
 		else
 			flash[:error] = "Invalid username or password"

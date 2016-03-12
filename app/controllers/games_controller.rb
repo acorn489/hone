@@ -1,13 +1,13 @@
 class GamesController < ApplicationController
 
 	def new
-		authenticate(Developer)
-		@skill = Skill.find_by_id(params[:id])
+		authorize_role(Developer)
+		@skill = Skill.friendly.find(params[:skill])
 		@game = Game.new
 	end
 
 	def create
-		authenticate(Developer)
+		authorize_role(Developer)
 		@skill = Skill.find_by_id(params[:id])
 		@game = Game.create(game_params)
 		if @game.save

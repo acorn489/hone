@@ -1,17 +1,13 @@
-<header>
-  <nav class="menu">
-    <div class="horizontalLine bg_gardient"></div>
-    <div class="nav-left">
-      <div class="title">Hone</div>
-      <ul id="navList">
-        <li><a class="navLink" href="#">Home</a></li>
-        <li><a class="navLink" href="#">Courses</a></li>
-        <li><a class="navLink" href="#">Skills</a></li>
-        <li><a class="navLink" href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="nav-right">
-      <%= link_to "Logout", {:controller => 'access', :action => 'logout'}, class: "buttonLink buttonOrange" %>
-    </div>
-  </nav>
-</header>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<%= link_to "Hone", {:controller => home_controller, :action => 'show'}, class: "navbar-brand" %>
+		</div>
+	<div>
+	<% if session[:user_id] %>
+		<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Logout", {:controller => 'access', :action => 'logout'} %>
+			</li>
+		</ul>
+	<% end %>
+</nav>

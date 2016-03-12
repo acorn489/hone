@@ -75,7 +75,8 @@
 				<% end %>
 			</table>
 		<% end %>
-		<%= link_to "Add a game",{:controller => 'games', :id => @skill.id, :action => 'new'},
+		<%= link_to "Add a game",
+			{:controller => 'games', :skill => @skill.slug, :action => 'new'},
 			:method => :get,
 			class: "btn btn-primary" %>
 	</body>

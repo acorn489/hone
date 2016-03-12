@@ -2,6 +2,9 @@ class Domain < ActiveRecord::Base
 	belongs_to :course
 	has_many :skills
 
+	extend FriendlyId
+	friendly_id :title, use: :slugged
+
 	#A method to retrieve all the unlocked games within a domain for a certain student
 	def unlocked_games(student_id)
 		games = Array.new

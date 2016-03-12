@@ -5,6 +5,9 @@ class Skill < ActiveRecord::Base
 	has_many :primary_games, :class_name => 'Game', :foreign_key => 'primary_skill_id'
 	has_many :secondary_games, :class_name => 'Game', :foreign_key => 'secondary_skill_id'
 
+	extend FriendlyId
+	friendly_id :title, use: :slugged
+
 	after_create :initialize_course_id
 
 	validates :title, :description, :grade, presence: true
@@ -15,26 +18,26 @@ class Skill < ActiveRecord::Base
 
 	def level_passed(student_id)
 		student = Student.find_by_id(student_id)
-		number_of_passes = student.skills.count :conditions => {:course_id => self.course_id, 
+		number_of_passes = student.skills.count :conditions => {:course_id => self.course_id,
 			:level => self.level}
-		number_of_skills = Skill.where(:course_id => self.course_id, 
+		number_of_skills = Skill.where(:course_id => self.course_id,
 			:level => self.level).count
 		return number_of_skills == number_of_passes
 	end
 
 	def grade_passed(student_id)
 		student = Student.find_by_id(student_id)
-		number_of_passes = student.skills.count :conditions => {:course_id => self.course_id, 
+		number_of_passes = student.skills.count :conditions => {:course_id => self.course_id,
 			:grade => self.grade}
-		number_of_skills = Skill.where(:course_id => self.course_id, 
+		number_of_skills = Skill.where(:course_id => self.course_id,
 			:grade => self.grade).count
 		return number_of_skills == number_of_passes
 	end
 	def domain_passed(student_id)
 		student = Student.find_by_id(student_id)
-		number_of_passes = student.skills.count :conditions => {:course_id => self.course_id, 
+		number_of_passes = student.skills.count :conditions => {:course_id => self.course_id,
 			:domain_id => self.domain_id, :grade => self.grade}
-		number_of_skills = Skill.where(:course_id => self.course_id, 
+		number_of_skills = Skill.where(:course_id => self.course_id,
 			:domain_id => self.domain_id, :grade => self.grade).count
 		return number_of_skills == number_of_passes
 	end
