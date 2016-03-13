@@ -84,7 +84,6 @@ EOF
     break;;
 
     -s|--SERVER)
-	echo "reingesprungen"
        SERVER=true
     shift 1;;
     --)
@@ -95,13 +94,14 @@ done
 
 if [ "$SERVER" = true ]; then
   cd $KIDMOOC_ROOT
-  echo 'Killing existing PID of rails server'
-  kill -INT $(cat tmp/pids/server.pid);
   git reset --hard
   output=$(git pull 2>&1)
   if [ "$output" = "Already up-to-date." ]; then
     exit 1
   fi
+  echo 'Killing existing PID of rails server'
+  kill -INT $(cat tmp/pids/server.pid);
+
   echo 'pulling new master of kidmooc..'
 fi
 
