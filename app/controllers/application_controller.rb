@@ -18,7 +18,9 @@ class ApplicationController < ActionController::Base
 	def home_controller
 		if current_admin
 			return 'admin'
-                elsif current_user
+		elsif current_developer
+			return 'developer'
+		elsif current_user
 			return 'home'
 		end
 		return 'welcome'
@@ -29,7 +31,7 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	def after_sign_in_path_for(resource)
-		stored_location_for(resource) || '/home'
+		stored_location_for(resource) || '/'
 	end
 
 	def not_authorized

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get "home" => "home#show"
   get "admin" => "admin#show"
+  get "developer" => "developer#show"
 
   post "developers/attempt_login"
   get "courses/:slug" => "courses#show"
