@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Student.create! :name => 'Husseny', :email => 'husseny@web.de', :password => '12341234', :password_confirmation => '12341234'
-Developer.create! :name => 'Marco', :email => 'marco@web.de', :password => '12341234', :password_confirmation => '12341234'
-Admin.create! :name => 'Admin', :email => 'admin@web.de', :password => '12341234', :password_confirmation => '12341234'
+Student.create! :username => 'husseny', :name => 'Husseny', :email => 'husseny@web.de', :password => '12341234', :password_confirmation => '12341234'
+Developer.create! :username => 'marco', :name => 'Marco', :email => 'marco@web.de', :password => '12341234', :password_confirmation => '12341234'
+Admin.create! :username => 'administrator', :name => 'Admin', :email => 'admin@web.de', :password => '12341234', :password_confirmation => '12341234'
 
 courses = Course.create([{title: 'Mathematics', description: 'This is a course to teach Maths to grades 1 and 2 using the common core standards.'}, {title: 'English', description: 'This is an English course that is taught using the common core standards.'}])
 

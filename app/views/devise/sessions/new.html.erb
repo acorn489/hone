@@ -5,8 +5,8 @@
 <%= content_tag(:div, flash[:notice], :class => "alert-info alert") if flash[:notice] %>
 <%= content_tag(:div, flash[:alert], :class => "alert-info alert") if flash[:alert] %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :login %><br />
+    <%= f.text_field :login, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -27,3 +27,20 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<!-- TODO: use form below for login -->
+<div class="content">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do %>
+	  <div class="form-group">
+		  <%= label_tag :username, "Username:", class: 'form-control' %>
+		  <%= text_field_tag :username, nil, placeholder: 'Enter your username', class: 'form-control' %>
+		</div>
+		<div class="form-group">
+  		<%= label_tag :password, "Password:", class: 'form-control' %>
+			<%= password_field_tag :password, nil, placeholder: 'Enter Your password', class: 'form-control'  %>
+    </div>
+   	<div class="form-group">
+	  	<%= submit_tag "Login", class: 'btn btn-default' %>
+		</div>
+  <% end %>
+</div>
