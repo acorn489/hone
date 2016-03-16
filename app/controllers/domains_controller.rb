@@ -8,6 +8,6 @@ class DomainsController < ApplicationController
 
 	def game_store
 		@domain = Domain.friendly.find(params[:slug])
-		@games = @domain.unlocked_games(current_user)
+		@games = @domain.games
 	end
 end

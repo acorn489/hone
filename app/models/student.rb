@@ -1,10 +1,3 @@
 class Student < User
-	has_many :scores, dependent: :destroy
-	has_many :games, :through => :scores
-	has_many :passes, dependent: :destroy
-	has_many :skills, :through => :passes
-	has_many :levels, dependent: :destroy
-	has_many :courses, :through => :levels
-	has_many :unlocks, dependent: :destroy
-	has_many :games, :through => :unlocks
+	has_many :skills, :through => :student_skill_state
 end
