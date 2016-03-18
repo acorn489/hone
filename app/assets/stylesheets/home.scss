@@ -1,0 +1,184 @@
+.transparent-red {
+	background-color: #E67777;
+	opacity: 0.8;
+}
+
+.progress {
+	background-color: transparent;
+	width: 50%;
+	height: 20px;
+	border: 3px solid #5BC3F3;
+	border-radius: 10px;
+	text-align: left;
+}
+
+.progress-style {
+	height: 20px;
+	background-color: #94D9F9;
+	border-radius: 7px;
+	vertical-align: top !important;
+}
+
+.progress .progress-grade {
+	width: 40%;
+}
+
+.courseRowHeader {
+	height: 55px;
+	line-height: 55px;
+	margin: auto;
+	max-width: 1135px;
+}
+
+.courseRowHeader h1 {
+	margin: 0;
+}
+
+#sectionCourse {
+	color: #495052;
+	padding: 20px 50px;
+}
+
+.sectionTitle {
+	font-size: 2em;
+}
+
+
+.course {
+	width: 200px;
+	height: 280px;
+	box-shadow: 1px 1px 1px #888;
+}
+
+.courseRowBody li a {
+	text-decoration: none;
+}
+
+#yourCourseList {
+	list-style: none;
+	padding: 0;
+}
+
+#yourCourseList li:first-child {
+	margin-left: 0px;
+}
+
+.courseRowBody li {
+	display: inline-block;
+	margin-left: 30px;
+	width: 200px !important;
+}
+
+.carousel-list {
+	margin: auto;
+	max-width: 1135px;
+}
+
+.status {
+	position: absolute;
+	width: 200px;
+}
+
+.status div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.gradeContainer {
+	width: 30px;
+}
+
+.gradeContainer img {
+	width: 100%;
+}
+
+.mathIcon {
+	height: 100%;
+	background: url(http://www.nicdarkthemes.com/themes/baby-kids/wp/demo/wp-content/uploads/2015/01/hand-color.jpg);
+	background-size: cover;
+}
+
+.englishIcon {
+	height: 100%;
+	background: url(http://www.nicdarkthemes.com/themes/baby-kids/wp/demo/wp-content/uploads/2015/01/grass.jpg);
+	background-size: cover;
+}
+
+.color-box {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+}
+
+.details {
+	height: 80px;
+	text-align: center;
+}
+
+.details .title {
+	width: 100%;
+	height: 40px;
+	color: #888;
+	line-height: 40px;
+	font-size: 20px;
+}
+
+.details .progress {
+	margin: auto;
+}
+
+.progress .progress-math {
+	width: 70%;
+}
+
+.lock {
+	width: 70px;
+	height: 70px;
+	border-radius: 50px;
+	text-align: center;
+	margin-top: 30%;
+	display: inline-block;
+	transition: all .5s ease;
+	background-size: 100% 100%;
+}
+
+.lock img {
+	width: 50%;
+	margin-top: 25%;
+}
+
+.lock:hover {
+	width: 90px;
+	height: 90px;
+	margin-top: 25%;
+}
+
+.caroufredsel_wrapper {
+	height: 363px !important;
+}
+
+.carousel-control {
+	float: right;
+	margin: auto;
+	width: 120px;
+}
+
+.control {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	border: 2px solid #888;
+	color: #888;
+	font-size: 2em;
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+}
+
+.prev {
+	float: left;
+}
+
+.next {
+	float: right;
+}

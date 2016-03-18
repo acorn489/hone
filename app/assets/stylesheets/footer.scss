@@ -1,0 +1,46 @@
+.horizontalLine {
+  height: 3px;
+  background: linear-gradient(to right, #74cee4 0%, #66ce9c 16%, #edbf47 32%, #ec774b 49%, #74cee4 65%, #66ce9c 83%, #edbf47 100%);
+}
+
+.subfooter {
+  height: 200px;
+  color: white;
+  padding: 10px;
+}
+
+.subfooter .title {
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+}
+
+.honeIcon {
+  text-align: center;
+}
+
+.honeIcon img {
+  width: 120px;
+}
+
+footer {
+  height: 100px;
+  color: white;
+  position: absolute;
+  width: 100%;
+
+  p {
+    margin: 0;
+  }
+}
+
+#copyrightLogo {
+  background-image: url(http://www.nicdarkthemes.com/themes/baby-kids/wp/demo/wp-content/themes/babykids/img/copyright.jpg);
+  height: 100px;
+  color: white;
+  line-height: 100px;
+  padding-left: 50px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+}
