@@ -1,23 +1,23 @@
 <h3><%= @domain.title %></h3>
 <%= @domain.description %><br><br>
 <h4>Skills:</h4>
-<table class = "table table-striped", style = "width:80%">
-	<tr>
-		<td><h4>Skill</h4></td>
-		<td><h4>Description</h4></td>
-		<td><h4>Grade</h4></td>
-	</tr>
-	<% @skills.each do |skill| %>
-		<tr>
-			<td>
-				<%= link_to skill.title, skill %>
-			</td>
-			<td>
-				<%= skill.description %>
-			</td>
-			<td>
-				<%= skill.grade %>
-			</td>
-		</tr>
-	<% end %>
+<table class="table table-striped" , style="width:80%">
+  <tr>
+    <td><h4>Skill</h4></td>
+    <td><h4>Description</h4></td>
+    <td><h4>Grade</h4></td>
+  </tr>
+  <% @skills.each do |skill| %>
+      <tr>
+        <td>
+          <%= link_to skill.title, skill %>
+        </td>
+        <td>
+          <%= skill.description %>
+        </td>
+        <td>
+          <%= skill.grade %>
+        </td>
+      </tr>
+  <% end %>
 </table>

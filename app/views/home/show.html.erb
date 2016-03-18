@@ -1,6 +1,6 @@
 <section id="sectionTop" class="headImage">
   <div class="imgContainer bg_greydark">
-    <img src="http://themes.newgraphicses.it/baby-kids/wp/demo/wp-content/uploads/2015/01/img-courses.jpg" alt="" />
+    <img src="http://themes.newgraphicses.it/baby-kids/wp/demo/wp-content/uploads/2015/01/img-courses.jpg" alt=""/>
   </div>
 </section>
 <div class="horizontalLine gradient"></div>
@@ -17,30 +17,30 @@
       <div class="carousel-list">
         <ul id="yourCourseList">
           <% @courses.each do |course| %>
-          <li>
-            <%= link_to({:controller => 'courses', :slug => course.slug, :action => 'show'}, {class: "courseLink"}) do %>
-                <div class="course" id="mathCourse">
-                  <div class="imgContainer">
-                      <div class="mathIcon">
-                        <div class="color-box transparent-red">
+              <li>
+                <%= link_to({:controller => 'courses', :slug => course.slug, :action => 'show'}, {class: "courseLink"}) do %>
+                    <div class="course" id="mathCourse">
+                      <div class="imgContainer">
+                        <div class="mathIcon">
+                          <div class="color-box transparent-red">
+                          </div>
                         </div>
                       </div>
-                  </div>
-                <div class="details">
-                  <div class="title">
-                  </div>
-                  <div class="status">
-                    <div class="gradeContainer">
-                      <img src="https://cdn2.iconfinder.com/data/icons/navigation-16/64/one_menu_nav_navigation_number-512.png" alt="" />
+                      <div class="details">
+                        <div class="title">
+                        </div>
+                        <div class="status">
+                          <div class="gradeContainer">
+                            <img src="https://cdn2.iconfinder.com/data/icons/navigation-16/64/one_menu_nav_navigation_number-512.png" alt=""/>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-style progress-math"></div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="progress">
-                      <div class="progress-style progress-math"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <% end %>
-          </li>
+                <% end %>
+              </li>
           <% end %>
         </ul>
       </div>
@@ -48,7 +48,7 @@
   </div>
 </section>
 <script>
-$(document).ready(function() {
+  $(document).ready(function () {
     $('#yourCourseList').carouFredSel({
       responsive: true,
       width: '100%',
@@ -65,5 +65,5 @@ $(document).ready(function() {
         }
       }
     });
-});
+  });
 </script>

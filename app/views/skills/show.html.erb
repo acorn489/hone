@@ -1,41 +1,41 @@
 <h3><%= @skill.title %></h3>
 <%= @skill.description %><br><br>
 <% if @games.count > 0 %>
-	<table class = "table table-striped", style = "width:80%">
-		<h4>Games</h4>
-		<tr>
-			<td>
-				Game
-			</td>
-			<td>
-				Description
-			</td>
-			<td>
-				Platform
-			</td>
-		</tr>
-		<% @games.each do |game| %>
-			<tr>
-				<td>
-				<%= link_to game.link, :target => "_blank" do %>
-				<% game.title %>
-				<% end %>
-				</td>
-				<td>
-				<%= game.description %>
-				</td>
-				<td>
-				<% if game.platform == 1 %>
-					<%= "Android" %>
-				<% else %>
-					<%= "iOS" %>
-				<% end %>
-				</td>
-			</tr>
-		<% end %>
-	</table>
+    <table class="table table-striped" , style="width:80%">
+      <h4>Games</h4>
+      <tr>
+        <td>
+          Game
+        </td>
+        <td>
+          Description
+        </td>
+        <td>
+          Platform
+        </td>
+      </tr>
+      <% @games.each do |game| %>
+          <tr>
+            <td>
+              <%= link_to game.link, :target => "_blank" do %>
+                  <% game.title %>
+              <% end %>
+            </td>
+            <td>
+              <%= game.description %>
+            </td>
+            <td>
+              <% if game.platform == 1 %>
+                  <%= "Android" %>
+              <% else %>
+                  <%= "iOS" %>
+              <% end %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
 <% end %>
 <%= link_to "Add a game",
-	{:controller => 'games', :skill => @skill.slug, :action => 'new'},
-	:method => :get,
-	class: "btn btn-primary" %>
+            {:controller => 'games', :skill => @skill.slug, :action => 'new'},
+            :method => :get,
+            class: "btn btn-primary" %>

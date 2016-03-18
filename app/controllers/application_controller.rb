@@ -1,48 +1,49 @@
 class ApplicationController < ActionController::Base
-	class NoSession < StandardError
-	end
-	# Prevent CSRF attacks by raising an exception.
-	# For APIs, you may want to use :null_session instead.
-	protect_from_forgery with: :exception
+  class NoSession < StandardError
+  end
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
 
-	%w(Student Developer Admin).each do |k|
-		define_method "current_#{k.underscore}" do
-			current_user if current_user.is_a?(k.constantize)
-		end
+  %w(Student Developer Admin).each do |k|
+    define_method "current_#{k.underscore}" do
+      current_user if current_user.is_a?(k.constantize)
+    end
 
-		define_method "authenticate_#{k.underscore}!" do
-			|opts={}| send("current_#{k.underscore}") || not_authorized
-		end
-	end
+    define_method "authenticate_#{k.underscore}!" do
+    |opts={}|
+      send("current_#{k.underscore}") || not_authorized
+    end
+  end
 
-	def home_controller
-		if current_admin
-			return 'admin'
-		elsif current_developer
-			return 'developer'
-		elsif current_user
-			return 'home'
-		end
-		return 'welcome'
-	end
+  def home_controller
+    if current_admin
+      return 'admin'
+    elsif current_developer
+      return 'developer'
+    elsif current_user
+      return 'home'
+    end
+    return 'welcome'
+  end
 
-	helper_method :home_controller
+  helper_method :home_controller
 
-	before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-	def after_sign_in_path_for(resource)
-		stored_location_for(resource) || '/'
-	end
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || '/'
+  end
 
-	def not_authorized
-		flash[:error] = "You don't have permission to access the requested page."
-		redirect_to(:controller => 'welcome', :action => 'show')
-	end
+  def not_authorized
+    flash[:error] = "You don't have permission to access the requested page."
+    redirect_to(:controller => 'welcome', :action => 'show')
+  end
 
-	protected
-	def configure_permitted_parameters
-		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :name, :email, :password, :password_confirmation, :remember_me) }
-		devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :password, :remember_me) }
-		devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :password_confirmation, :current_password) }
-	end
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :name, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :password, :remember_me) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :password_confirmation, :current_password) }
+  end
 end

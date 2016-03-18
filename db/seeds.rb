@@ -10,9 +10,9 @@ Developer.create! :username => 'marco', :name => 'Marco', :email => 'marco@web.d
 Admin.create! :username => 'administrator', :name => 'Admin', :email => 'admin@web.de', :password => '12341234', :password_confirmation => '12341234'
 
 Course.create([
-  {title: 'Mathematics', description: 'This is a course to teach Maths to grades 1 and 2 using the common core standards.'},
-  {title: 'English', description: 'This is an English course that is taught using the common core standards.'}
-])
+                  {title: 'Mathematics', description: 'This is a course to teach Maths to grades 1 and 2 using the common core standards.'},
+                  {title: 'English', description: 'This is an English course that is taught using the common core standards.'}
+              ])
 
 domain = Domain.new(title: 'Operations & Algebric Thinking', screening_title: 'Think like a Calculator', description: 'A long description here')
 domain.course = Course.first

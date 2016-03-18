@@ -1,15 +1,15 @@
 <h4>Domains:</h4>
-<table class = "table table-striped", style = "width:80%">
-	<% @domains.each do |domain| %>
-		<tr>
-			<td>
-				<%= link_to domain.title,{
-					:controller => 'domains',
-					:slug => domain.slug,
-					:action => 'show'},
-					:method => :get,
-					class: "btn btn-success" %>
-			</td>
-		</tr>
-	<% end %>
+<table class="table table-striped" , style="width:80%">
+  <% @domains.each do |domain| %>
+      <tr>
+        <td>
+          <%= link_to domain.title, {
+              :controller => 'domains',
+              :slug => domain.slug,
+              :action => 'show'},
+                      :method => :get,
+                      class: "btn btn-success" %>
+        </td>
+      </tr>
+  <% end %>
 </table>
