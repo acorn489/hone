@@ -9,7 +9,7 @@ html {
 body {
   margin-bottom: 350px !important;
 
-  .container {
+  & > .container {
     padding-top: 150px;
   }
 }

@@ -1,0 +1,100 @@
+.headImage.skill .imgContainer {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.skill-header .icon {
+  background-color: #2DB0FF;
+  text-align: left;
+  padding-top: 12px;
+  padding-left: 12px;
+  vertical-align: top;
+  width: 100px;
+}
+
+.icon-bg {
+  background-color: #2DB0FF;
+  height: 100px;
+}
+
+.container {
+  padding-left: 0 !important;
+}
+
+.skill-header .header {
+  text-align: left;
+  height: 100px;
+}
+
+#skill-information hr, .skill-header hr {
+  border-width: 1px !important;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.skill-header .header > div {
+  min-height: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.category {
+  color: #FF005E;
+  margin-bottom: 0;
+}
+
+.skill-header .details ul {
+  text-align: left;
+  list-style: none;
+}
+
+.skill-header .details {
+  border-right: 1px solid #888;
+  font-weight: bold;
+  vertical-align: top;
+  padding-top: 12px;
+}
+
+.skill-header .desc {
+  vertical-align: top;
+  margin-left: 20px;
+  padding-top: 12px;
+}
+
+.game {
+  width: 150px;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.game a, .game a:hover, .game a:focus {
+  text-decoration: none;
+  color: #888;
+}
+
+.game .header .titel {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.game .body img {
+  width: 100%;
+}
+
+.rating {
+  text-align: center;
+}
+
+.rating img {
+  width: 20px;
+  height: 20px;
+}
+
+.skill-header {
+  .headImage .imgContainer img {
+      width: 100%;
+      opacity: 0.9;
+      margin-top: -300px;
+  }
+}
