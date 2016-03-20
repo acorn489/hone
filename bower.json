@@ -1,0 +1,24 @@
+{
+  "name": "kidmooc",
+  "main": "index.js",
+  "authors": [
+    "Jochen Walther <waltherjochen@web.de>",
+    "Dennis Latt <kontakt@latt.org>",
+    "Christian Petrov <christian.petrov@outlook.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.2",
+    "jquery-ujs": "~1.2.1"
+  }
+}

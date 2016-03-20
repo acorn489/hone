@@ -1,5 +1,4 @@
 nav {
-  width: 95%;
   height: 70px;
   line-height: 70px;
   position: fixed;
@@ -10,7 +9,6 @@ nav {
   box-shadow: 0 4px 0 0 #F0F0F0;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
-  //background-image: url(<%= asset_path 'kidmooc.svg' %>);
   background-repeat: no-repeat;
   background-position: left;
   background-size: contain;

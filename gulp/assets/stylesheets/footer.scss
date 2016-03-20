@@ -1,3 +1,14 @@
+footer {
+  height: 300px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  p {
+    margin: 0;
+  }
+}
+
 .horizontalLine {
   height: 3px;
   background: linear-gradient(to right, #74cee4 0%, #66ce9c 16%, #edbf47 32%, #ec774b 49%, #74cee4 65%, #66ce9c 83%, #edbf47 100%);
@@ -21,17 +32,6 @@
 
 .honeIcon img {
   width: 120px;
-}
-
-footer {
-  height: 100px;
-  color: white;
-  position: absolute;
-  width: 100%;
-
-  p {
-    margin: 0;
-  }
 }
 
 #copyrightLogo {

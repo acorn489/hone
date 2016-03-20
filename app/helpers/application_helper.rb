@@ -14,4 +14,9 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def gulp_asset_path(path)
+    path = REV_MANIFEST[path] if defined?(REV_MANIFEST)
+    "/assets/#{path}"
+  end
 end
