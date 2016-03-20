@@ -1,20 +1,23 @@
 <header>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="horizontalLine bg_gardient"></div>
-    <div class="nav-left">
-      <div class="title">
-        <%= link_to "Hone", {:controller => '/welcome', :action => 'show'}, class: "navbar-brand" %>
-      </div>
-      <ul id="navList">
-        <li><a class="navLink" href="#">Contact</a></li>
-        <% if user_signed_in? %>
-            <li><%= link_to 'Profile', edit_user_registration_path, class: 'navLink' %></li>
-            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'navLink' %></li>
-        <% else %>
-            <li><%= link_to 'Log In', new_user_session_path, class: 'navLink' %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path, class: 'navLink' %></li>
+  <nav class="menu">
+    <div class="container">
+      <div class="nav-left">
+        <%= link_to({:controller => '/welcome', :action => 'show'}) do %>
+        <img class="honeIcon" src="<%= gulp_asset_path("images/kidmooc.svg") %>" alt="">
+        <span class="normal">Start</span>
         <% end %>
-      </ul>
+      </div>
+      <div class="nav-right">
+        <ul id="navList">
+          <% if user_signed_in? %>
+            <li><%= link_to 'Profile', edit_user_registration_path, class: 'profile' %></li>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'logout' %></li>
+          <% else %>
+            <li><%= link_to 'Log In', new_user_session_path, class: 'profile' %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path, class: 'logout' %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
