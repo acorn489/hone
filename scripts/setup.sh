@@ -105,8 +105,15 @@ if [ "$SERVER" = true ]; then
   echo 'pulling new master of kidmooc..'
 fi
 
-echo 'installing new dependencies..'
+echo 'installing npm dependencies..'
+npm install
+
+echo 'installing new gems..'
 bundler
+
+echo 'distilling resources..'
+node_modules/gulp/bin/gulp.js build
+
 echo 'recreating db tables..'
 rake db:reset
 echo 'launching new server instance..'
