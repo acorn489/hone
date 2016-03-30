@@ -5,5 +5,6 @@
 // and will be compiled with Gulp and Browserify
 //
 // Pull compiled from /public/assets/javascripts
+//= require paloma
 //= require global
 //= require vendor

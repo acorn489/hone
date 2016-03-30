@@ -5,10 +5,16 @@
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script>
+    $(document).ready(function(){
+      Paloma.start();
+    });
+  </script>
 </head>
 <body>
-<%= render partial: "partials/navbar" %>
-<%= yield %>
-<%= render partial: "partials/footer" %>
+  <%= render partial: "partials/navbar" %>
+  <%= yield %>
+  <%= render partial: "partials/footer" %>
+  <%= insert_paloma_hook %>
 </body>
 </html>

@@ -45,3 +45,4 @@ group :development, :test do
 end
 
 gem 'friendly_id'
+gem 'paloma', '~> 5.0.0'
