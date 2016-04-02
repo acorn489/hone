@@ -69,12 +69,8 @@ Rails.application.routes.draw do
 
   # All routes to communicate with the API methods
   namespace :api, defaults: {format: :json} do
-    get 'students/test' => 'students#test'
-    post 'students/login' => 'students#login'
-    post 'students/submit_score' => 'students#submit_score'
-    resources :students, only: :index do
-      member do
-      end
+    namespace :v1 do
+      get 'skills' => 'students#skills'
     end
   end
 end

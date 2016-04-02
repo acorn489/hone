@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Student.create! :username => 'husseny', :name => 'Husseny', :email => 'husseny@web.de', :password => '12341234', :password_confirmation => '12341234'
+Student.create! :username => 'student', :name => 'student', :email => 'student@web.de', :password => '12341234', :password_confirmation => '12341234'
 Developer.create! :username => 'marco', :name => 'Marco', :email => 'marco@web.de', :password => '12341234', :password_confirmation => '12341234'
 Admin.create! :username => 'administrator', :name => 'Admin', :email => 'admin@web.de', :password => '12341234', :password_confirmation => '12341234'
 
@@ -13,6 +14,7 @@ Course.create([
                   {title: 'Mathematics', description: 'This is a course to teach Maths to grades 1 and 2 using the common core standards.'},
                   {title: 'English', description: 'This is an English course that is taught using the common core standards.'}
               ])
+
 
 domain = Domain.new(title: 'Operations & Algebric Thinking', screening_title: 'Think like a Calculator', description: 'A long description here')
 domain.course = Course.first
@@ -229,3 +231,7 @@ GameSkill.create(game_id: 3, skill_id: 2);
 
 Game.create(title: 'Build a tower 2', description: 'A long description here', platform: 1, link: 'https://play.google.com/store/apps/details?id=org.altervista.luma23.towerNumber', status: 1)
 GameSkill.create(game_id: 4, skill_id: 2);
+
+StudentSkillState.create! :student_id => 1, :skill_id => 1, :completed => true, :collected => false
+StudentSkillState.create! :student_id => 1, :skill_id => 2, :completed => true, :collected => true
+StudentSkillState.create! :student_id => 2, :skill_id => 2, :completed => true, :collected => true
