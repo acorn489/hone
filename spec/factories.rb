@@ -15,10 +15,23 @@ FactoryGirl.define do
     collected false
   end
 
+  factory :course do
+    title "course title"
+    description "course description"
+  end
+
+  factory :domain do
+    title "domain title"
+    description "domain description"
+    screening_title "domain screening title"
+  end
+
   factory :skill do
     id 1
     title 'foo'
     description 'bar'
     grade 2
+    domain
+    course
   end
 end

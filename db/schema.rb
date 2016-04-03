@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402171210) do
+ActiveRecord::Schema.define(version: 20160403191234) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -61,8 +61,10 @@ ActiveRecord::Schema.define(version: 20160402171210) do
     t.datetime "updated_at",                null: false
     t.integer  "domain_id",   limit: 4
     t.string   "slug",        limit: 255
+    t.integer  "course_id",   limit: 4
   end
 
+  add_index "skills", ["course_id"], name: "index_skills_on_course_id", using: :btree
   add_index "skills", ["domain_id"], name: "index_skills_on_domain_id", using: :btree
   add_index "skills", ["slug"], name: "index_skills_on_slug", using: :btree
 
@@ -96,5 +98,6 @@ ActiveRecord::Schema.define(version: 20160402171210) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "skills", "courses"
   add_foreign_key "skills", "domains"
 end

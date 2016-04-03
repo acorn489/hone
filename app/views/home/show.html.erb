@@ -16,7 +16,7 @@
           <ul id="yourCourseList">
             <% @courses.each do |course| %>
                 <li>
-                  <%= link_to({:controller => 'courses', :slug => course.slug, :action => 'show'}, {class: "courseLink"}) do %>
+                  <%= link_to({:controller => 'skills', :course => course.slug, :action => 'show'}, {class: "courseLink"}) do %>
                       <div class="course" id="mathCourse">
                         <div class="imgContainer">
                           <div class="mathIcon">

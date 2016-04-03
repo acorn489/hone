@@ -1,5 +1,6 @@
 class Skill < ActiveRecord::Base
   belongs_to :domain
+  belongs_to :course
 
   has_many :student_skill_states
   has_many :game_skills

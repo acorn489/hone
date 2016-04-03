@@ -1,0 +1,51 @@
+.bg-counter
+  width: 64px
+
+.grades
+  text-align: center
+  margin-left: 20px
+  margin-bottom: 20px
+
+  .grade
+    display: inline-block
+
+    .grade-number
+      background-image: url("images/bg-counter.png")
+      width: 64px
+      height: 28px
+      margin: 0 auto
+      font-size: 18px
+      color: #F87D7D
+
+.standardsTable
+  display: flex
+  align-items: stretch
+
+  .column
+    flex: 1
+
+    .cell.collected
+      display: none
+
+    .cell:not(.completed):nth-child(-n+4)
+      display: block
+
+    .cell
+      padding: .75rem
+      line-height: 1.5
+      vertical-align: top
+      border-bottom: 1px solid #eceeef
+      text-align: center
+      cursor: pointer
+
+      &:last-child
+        border-bottom: 1px solid #eceeef
+
+      img
+        -moz-user-select: none
+        -webkit-user-select: none
+        user-select: none
+
+.nopadding
+   padding: 0 !important
+   margin: 0 !important

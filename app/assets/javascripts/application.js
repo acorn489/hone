@@ -6,5 +6,5 @@
 //
 // Pull compiled from /public/assets/javascripts
 //= require paloma
-//= require global
 //= require vendor
+//= require global

@@ -1,6 +1,5 @@
 class SkillsController < ApplicationController
   def show
-    @skill = Skill.friendly.find(params[:id])
-    @games = @skill.games
+    @course = Course.find_by_slug(params[:course])
   end
 end

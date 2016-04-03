@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "domains/:slug" => "domains#show"
   get "domains/:slug/games" => "domains#game_store"
   get "skill" => "skill#show"
+  get "skills" => "skills#show"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

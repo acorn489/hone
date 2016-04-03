@@ -15,7 +15,7 @@ module.exports = {
     }
   },
   images: {
-    src: sourceFiles + "/images/**",
+    src: [sourceFiles + "/images/**", sourceFiles + "/components/**/*.png"],
     dest: publicAssets + "/images"
   },
   fonts: {
@@ -24,7 +24,10 @@ module.exports = {
   },
   bower: {
     src: "bower.json",
-    dest: publicAssets + '/javascripts'
+    dest: publicAssets + '/javascripts',
+    overrides: { // These bower modules' 'main' is not declared, so we have to do it ourselves
+      "jquery-classywiggle": {main: ["./src/js/jquery.classywiggle.js"]}
+    }
   },
   vendor_css: {
     src: ["bower_components/bootstrap/dist/css/bootstrap.min.css"],
@@ -32,7 +35,10 @@ module.exports = {
   },
   browserify: {
     bundleConfigs: [{
-      entries: sourceFiles + '/javascripts/global.js',
+      entries: [
+        sourceFiles + '/javascripts/global.js',
+        sourceFiles + '/components/skill-dashboard/main.js'
+      ],
       dest: publicAssets + '/javascripts',
       outputName: 'global.js',
       extensions: ['.js', '.coffee']

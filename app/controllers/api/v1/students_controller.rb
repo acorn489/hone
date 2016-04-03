@@ -34,6 +34,9 @@ module Api
       end
 
       def skills
+        unless params[:course_id].present?
+          return render nothing: true, status: :bad_request
+        end
         render :json =>
           Skill
             .joins(
@@ -44,10 +47,14 @@ module Api
               'student_skill_states.*',
               'skills.*'
             )
+            .where(
+              ['skills.course_id = ?', params[:course_id]]
+            )
             .map {
               |skill| {
                 :id => skill.id,
                 :grade => skill.grade,
+                :title => skill.title,
                 :domain_id => skill.domain_id,
                 :completed => skill.completed?,
                 :collected => skill.collected?

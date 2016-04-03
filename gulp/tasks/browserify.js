@@ -6,6 +6,8 @@ var config = require('../config').browserify;
 var gulp = require('gulp');
 var handleErrors = require('../util/handleErrors');
 var source = require('vinyl-source-stream');
+var babelify = require("babelify");
+var browserifyHandlebars = require("browserify-handlebars");
 var watchify = require('watchify');
 
 var browserifyTask = function(callback, devMode) {
@@ -19,7 +21,7 @@ var browserifyTask = function(callback, devMode) {
       bundleConfig = _.omit(bundleConfig, ['external', 'require']);
     }
 
-    var b = browserify(bundleConfig);
+    var b = browserify(bundleConfig).transform(babelify).transform(browserifyHandlebars);
 
     var bundle = function() {
       bundleLogger.start(bundleConfig.outputName);

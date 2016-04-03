@@ -10,7 +10,7 @@ gulp.task("bower", function() {
   var assetFilter = filter("**/*.js", {restore: true});
   return gulp.src(config.src)
     .pipe(changed(config.dest))
-    .pipe(mainBowerFiles())
+    .pipe(mainBowerFiles({overrides: config.overrides}))
     .pipe(assetFilter)
     .pipe(concat("vendor.js"))
     .pipe(assetFilter.restore)
