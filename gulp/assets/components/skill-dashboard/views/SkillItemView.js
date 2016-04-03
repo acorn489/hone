@@ -10,18 +10,18 @@ let SkillItemView = Backbone.Marionette.ItemView.extend({
     unwrapView.call(this);
     this.wiggle();
   },
-  events: {click: "updateModel"},
+  events: {click: "handleClick"},
   modelEvents: {
     "change:collected": "animateSkillCollection",
     "change:completed": "render"
   },
   animateSkillCollection,
   wiggle: () => setTimeout(() => $(".completed img").ClassyWiggle(), 0),
-  updateModel: function() {
-    if (!this.model.get("completed")) {
-      this.model.set("completed", true);
-    } else {
+  handleClick: function() {
+    if (this.model.get("completed")) {
       this.model.set("collected", true);
+    } else {
+      window.open("/skill?id=" + this.model.get("id"), "_self");
     }
   }
 });
