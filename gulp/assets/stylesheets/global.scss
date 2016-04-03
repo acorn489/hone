@@ -1,4 +1,5 @@
 @import "./*";
+@import url(https://fonts.googleapis.com/css?family=Abel);
 
 /* User Agent Stylesheet */
 html {
@@ -15,7 +16,7 @@ body {
 }
 
 * {
-  font-family: Pausenbrot-Regular;
+  font-family: 'Abel', sans-serif;
 }
 
 
@@ -43,11 +44,4 @@ body {
 
 h1, h2, h3, h4, h5 {
   text-align: center;
-}
-
-/* Fonts */
-
-@font-face {
-  font-family: "Pausenbrot-Regular";
-  src: url('fonts/Pausenbrot-Regular.otf') format("truetype");
 }

@@ -2,7 +2,7 @@
   <%= render partial: "partials/flash" %>
   <section id="sectionTop" class="headImage">
     <div class="imgContainer bg_greydark">
-      <img src="http://themes.newgraphicses.it/baby-kids/wp/demo/wp-content/uploads/2015/01/img-courses.jpg" alt=""/>
+      <img src="<%= gulp_asset_path('images/header-image.jpg') %>" alt="" />
     </div>
   </section>
   <div class="horizontalLine gradient"></div>
@@ -25,16 +25,7 @@
                           </div>
                         </div>
                         <div class="details">
-                          <div class="title">
-                          </div>
-                          <div class="status">
-                            <div class="gradeContainer">
-                              <img src="https://cdn2.iconfinder.com/data/icons/navigation-16/64/one_menu_nav_navigation_number-512.png" alt=""/>
-                            </div>
-                            <div class="progress">
-                              <div class="progress-style progress-math"></div>
-                            </div>
-                          </div>
+                          <div class="title">Math</div>
                         </div>
                       </div>
                   <% end %>
