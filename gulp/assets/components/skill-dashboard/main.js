@@ -7,10 +7,11 @@ import GradesCollectionView from "./views/GradesCollectionView";
 import GradeCollection from "./models/GradeCollection";
 import DomainsModel from "./models/DomainsModel";
 
-$(() => {
-  let domainsModel = new DomainsModel({courseId: window.app.courseId});
-  domainsModel.fetch();
-  new DomainsCollectionView({model: domainsModel});
-  new GradesCollectionView({collection: new GradeCollection({domainsModel})});
+Paloma.controller('Skills', {
+  show: () => {
+    let domainsModel = new DomainsModel({courseId: window.app.courseId});
+    domainsModel.fetch();
+    new DomainsCollectionView({model: domainsModel});
+    new GradesCollectionView({collection: new GradeCollection({domainsModel})});
+  }
 });
-
