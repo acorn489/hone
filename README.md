@@ -1,3 +1,5 @@
+TODO: Update README. The information below might be outdated.
+
 This file provides an installation guide to both OSX & Ubuntu:
 
 A) OSX
