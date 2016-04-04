@@ -99,6 +99,29 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_ef9fcdb2",
+        "filename": "app/views/games/new.html.erb",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-04T08:49:00Z",
+      "side": 1,
+      "message": "Can you use real data from the skills service?",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 17
+      },
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_0f5e71e9",
         "filename": "db/migrate/20150721161519_create_games.rb",
         "patchSetId": 2
@@ -110,6 +133,74 @@
       "writtenOn": "2016-04-04T08:48:57Z",
       "side": 1,
       "message": "shouldn\u0027t be checked in right now",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_cf40890a",
+        "filename": "vendor/assets/javascripts/select2.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-04T08:49:00Z",
+      "side": 1,
+      "message": "I think we don\u0027t need this? Select2 is already declared as a bower dependency.",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_af454518",
+        "filename": "vendor/assets/javascripts/select2.min.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-04T08:49:00Z",
+      "side": 1,
+      "message": "I think we don\u0027t need this? Select2 is already declared as a bower dependency.",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_8f4ba12b",
+        "filename": "vendor/assets/stylesheets/select2.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-04T08:49:00Z",
+      "side": 1,
+      "message": "I think we don\u0027t need this? Select2 is already declared as a bower dependency.",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_6f485d2e",
+        "filename": "vendor/assets/stylesheets/select2.min.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-04T08:49:00Z",
+      "side": 1,
+      "message": "I think we don\u0027t need this? Select2 is already declared as a bower dependency.",
       "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
