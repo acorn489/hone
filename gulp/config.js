@@ -32,7 +32,7 @@ module.exports = {
     }
   },
   vendor_css: {
-    src: ["bower_components/bootstrap/dist/css/bootstrap.min.css", "bower_components/country-select-js/build/css/countrySelect.min.css", "bower_components/jquery-ui/themes/flick/jquery-ui.min.css"],
+    src: ["bower_components/bootstrap/dist/css/bootstrap.min.css", "bower_components/country-select-js/build/css/countrySelect.min.css", "bower_components/jquery-ui/themes/flick/jquery-ui.min.css", "bower_components/select2/dist/css/select2.min.css"],
     dest: publicAssets + '/stylesheets'
   },
   browserify: {

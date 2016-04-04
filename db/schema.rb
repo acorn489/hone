@@ -44,14 +44,17 @@ ActiveRecord::Schema.define(version: 20160405162324) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.string   "description", limit: 255
-    t.integer  "platform",    limit: 4
-    t.string   "link",        limit: 255
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.integer  "status",      limit: 4,   default: 1
+    t.string   "title",        limit: 255
+    t.string   "image",        limit: 255
+    t.string   "android_link", limit: 255
+    t.string   "ios_link",     limit: 255
+    t.string   "web_link",     limit: 255
+    t.integer  "skill_id",     limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
+
+  add_index "games", ["skill_id"], name: "index_games_on_skill_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "title",       limit: 255
