@@ -30,7 +30,7 @@ module.exports = {
     }
   },
   vendor_css: {
-    src: ["bower_components/bootstrap/dist/css/bootstrap.min.css"],
+    src: ["bower_components/bootstrap/dist/css/bootstrap.min.css", "bower_components/select2/dist/css/select2.min.css"],
     dest: publicAssets + '/stylesheets'
   },
   browserify: {
