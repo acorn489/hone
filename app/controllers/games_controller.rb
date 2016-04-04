@@ -7,20 +7,21 @@ class GamesController < ApplicationController
   end
 
   def create
-    @skill = Skill.friendly.find(params.require(:game).permit(:skill)[:skill])
+    # @skill = Skill.friendly.find(params.require(:game).permit(:skill)[:skill])
     @game = Game.create(game_params)
-    if @game.save
-      GameSkill.create(game_id: @game.id, skill_id: @skill.id)
-      flash[:notice] = "Game Added"
-      redirect_to @game.skills[0] # TODO: support adding a game with more than one skill
-    else
-      flash[:notice] = "Please fill in all fields."
-      redirect_to :action => 'new', :skill => @skill.slug
-    end
+    redirect_to :action => 'new'
+    # if @game.save
+    #   # GameSkill.create(game_id: @game.id, skill_id: @skill.id)
+    #   flash[:notice] = "Game Added"
+    #   # redirect_to @game.skills[0] # TODO: support adding a game with more than one skill
+    # else
+    #   flash[:notice] = "Please fill in all fields."
+    #   redirect_to :action => 'new', :skill => @skill.slug
+    # end
   end
 
   private
   def game_params
-    params.require(:game).permit(:title, :description, :link, :passing_score, :platform)
+    params.require(:game).permit(:title)
   end
 end
