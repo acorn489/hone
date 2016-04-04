@@ -7,11 +7,11 @@ import GradesCollectionView from "./views/GradesCollectionView";
 import GradeCollection from "./models/GradeCollection";
 import DomainsModel from "./models/DomainsModel";
 
-Paloma.controller('Skills', {
-  show: () => {
+export default class SkillDashboard {
+  constructor() {
     let domainsModel = new DomainsModel({courseId: window.app.courseId});
     domainsModel.fetch();
     new DomainsCollectionView({model: domainsModel});
     new GradesCollectionView({collection: new GradeCollection({domainsModel})});
   }
-});
+}

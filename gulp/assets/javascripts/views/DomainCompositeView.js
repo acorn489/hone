@@ -2,7 +2,7 @@
 
 import unwrapView from "./unwrapView";
 import SkillItemView from "./SkillItemView";
-import domainTemplate from "../templates/domainTemplate.handlebars";
+import domainTemplate from "../../templates/domainTemplate.handlebars";
 
 let DomainCompositeView = Backbone.Marionette.CompositeView.extend({
   template: domainTemplate,

@@ -1,6 +1,6 @@
 /*globals Backbone:false, $:false*/
 
-import skillTemplate from "../templates/skillTemplate.handlebars";
+import skillTemplate from "../../templates/skillTemplate.handlebars";
 import unwrapView from "./unwrapView";
 let gradesVent = Backbone.Wreqr.radio.channel("grades").vent;
 

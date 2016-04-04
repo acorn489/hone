@@ -1,5 +1,5 @@
 /*globals Backbone:false*/
-import gradesTemplate from "../templates/gradesTemplate.handlebars";
+import gradesTemplate from "../../templates/gradesTemplate.handlebars";
 import GradeItemView from "./GradeItemView";
 
 let gradesVent = Backbone.Wreqr.radio.channel("grades").vent;

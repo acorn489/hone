@@ -15,7 +15,7 @@ module.exports = {
     }
   },
   images: {
-    src: [sourceFiles + "/images/**", sourceFiles + "/components/**/*.png"],
+    src: sourceFiles + "/images/**",
     dest: publicAssets + "/images"
   },
   fonts: {
@@ -35,10 +35,7 @@ module.exports = {
   },
   browserify: {
     bundleConfigs: [{
-      entries: [
-        sourceFiles + '/javascripts/global.js',
-        sourceFiles + '/components/skill-dashboard/main.js'
-      ],
+      entries: sourceFiles + '/javascripts/global.js',
       dest: publicAssets + '/javascripts',
       outputName: 'global.js',
       extensions: ['.js', '.coffee']

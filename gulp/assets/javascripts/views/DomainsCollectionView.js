@@ -1,5 +1,5 @@
 /*globals Backbone:false*/
-import domainsTemplate from "../templates/domainsTemplate.handlebars";
+import domainsTemplate from "../../templates/domainsTemplate.handlebars";
 import DomainCompositeView from "./DomainCompositeView";
 
 let DomainsCollectionView = Backbone.Marionette.CollectionView.extend({
