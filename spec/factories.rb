@@ -8,6 +8,15 @@ FactoryGirl.define do
     password_confirmation '12341234'
   end
 
+  factory :developer do
+    id 2
+    username 'marco'
+    name 'Marco'
+    email 'marco@web.de'
+    password '12341234'
+    password_confirmation '12341234'
+  end
+
   factory :student_skill_state do
     student_id 1
     skill_id 1
