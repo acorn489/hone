@@ -6,6 +6,7 @@ describe 'Skills API', :type => :request do
   include_context "api request global before and after hooks"
 
   describe 'GET /api/v1/skills' do
+    let!(:developer) { FactoryGirl.create :developer}
     let!(:student) { FactoryGirl.create :student }
     let!(:skill) { FactoryGirl.create :skill }
 
@@ -37,53 +38,89 @@ describe 'Skills API', :type => :request do
       get "/api/v1/skills", {course_id: 164}
 
       skills = JSON.parse(response.body)
+      expect(response.status).to eq 200
       expect(skills.length).to eq 0
     end
 
-    it 'returns array with skills and states' do
-      FactoryGirl.create :student_skill_state
-      sign_in(student)
+    describe 'as developer' do
+      it 'returns array with skills' do
+        FactoryGirl.create :student_skill_state
+        sign_in(developer)
 
-      get "/api/v1/skills", {course_id: skill.course_id}
+        get "/api/v1/skills", {course_id: skill.course_id}
 
-      skills = JSON.parse(response.body)
-      expect(skills.length).to eq 1
+        expect(response.status).to eq 200
+        skills = JSON.parse(response.body)
+        expect(skills.length).to eq 1
+      end
+
+      it 'response has skill properties without completion attributes' do
+        FactoryGirl.create :student_skill_state
+        sign_in(developer)
+
+        get "/api/v1/skills", {course_id: skill.course_id}
+
+        expect(response.status).to eq 200
+        skills = JSON.parse(response.body)
+        expect(skills[0]["id"]).to eq 1
+        expect(skills[0]["grade"]).to eq 2
+        expect(skills[0]["title"]).to eq "foo"
+        expect(skills[0]["domain_id"]).to eq skill.domain_id
+        expect(skills[0]["completed"]).to eq nil
+        expect(skills[0]["collected"]).to eq nil
+      end
     end
 
-    it 'returns skills without states' do
-      sign_in(student)
+    describe 'as student' do
+      it 'returns array with skills and states' do
+        FactoryGirl.create :student_skill_state
+        sign_in(student)
 
-      get "/api/v1/skills", {course_id: skill.course_id}
+        get "/api/v1/skills", {course_id: skill.course_id}
 
-      skills = JSON.parse(response.body)
-      expect(skills[0]["completed"]).to eq false
-      expect(skills[0]["collected"]).to eq false
-    end
+        expect(response.status).to eq 200
+        skills = JSON.parse(response.body)
+        expect(skills.length).to eq 1
+      end
 
-    it 'returns stateful skills' do
-      FactoryGirl.create :student_skill_state
-      sign_in(student)
+      it 'returns skills without states' do
+        sign_in(student)
 
-      get "/api/v1/skills", {course_id: skill.course_id}
+        get "/api/v1/skills", {course_id: skill.course_id}
 
-      skills = JSON.parse(response.body)
-      expect(skills[0]["completed"]).to eq true
-      expect(skills[0]["collected"]).to eq false
-    end
+        expect(response.status).to eq 200
+        skills = JSON.parse(response.body)
+        expect(skills[0]["completed"]).to eq false
+        expect(skills[0]["collected"]).to eq false
+      end
 
-    it 'response has skill properties' do
-      FactoryGirl.create :student_skill_state
-      sign_in(student)
+      it 'returns stateful skills' do
+        FactoryGirl.create :student_skill_state
+        sign_in(student)
 
-      get "/api/v1/skills", {course_id: skill.course_id}
+        get "/api/v1/skills", {course_id: skill.course_id}
 
-      skills = JSON.parse(response.body)
-      expect(skills[0]["id"]).to eq 1
-      expect(skills[0]["grade"]).to eq 2
-      expect(skills[0]["title"]).to eq "foo"
-      expect(skills[0]["domain_id"]).to eq skill.domain_id
-      expect(skills[0]["completed"]).to eq true
-      expect(skills[0]["collected"]).to eq false
+        expect(response.status).to eq 200
+        skills = JSON.parse(response.body)
+        expect(skills[0]["completed"]).to eq true
+        expect(skills[0]["collected"]).to eq false
+      end
+
+      it 'response has skill properties' do
+        FactoryGirl.create :student_skill_state
+        sign_in(student)
+
+        get "/api/v1/skills", {course_id: skill.course_id}
+
+        expect(response.status).to eq 200
+        skills = JSON.parse(response.body)
+        expect(skills[0]["id"]).to eq 1
+        expect(skills[0]["grade"]).to eq 2
+        expect(skills[0]["title"]).to eq "foo"
+        expect(skills[0]["domain_id"]).to eq skill.domain_id
+        expect(skills[0]["completed"]).to eq true
+        expect(skills[0]["collected"]).to eq false
+      end
     end
   end
 end
