@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_6cbe2001",
+        "filename": "app/controllers/games_controller.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "but we need this to get to the page",
+      "parentUuid": "baa041b7_0f82f152",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_ef86ad64",
         "filename": "app/models/game.rb",
         "patchSetId": 2
@@ -76,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_8cda8477",
+        "filename": "app/views/games/new.html.erb",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_af80a547",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 0
+      },
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_4f5599c4",
         "filename": "app/views/games/new.html.erb",
         "patchSetId": 2
@@ -87,6 +129,30 @@
       "writtenOn": "2016-04-04T08:48:57Z",
       "side": 1,
       "message": "i think this isn\u0027t working correctly.. same issue in the registration form (TODO)\n\ninstead this should be used:\nhttps://silviomoreto.github.io/bootstrap-select/examples/",
+      "range": {
+        "startLine": 25,
+        "startChar": 32,
+        "endLine": 25,
+        "endChar": 44
+      },
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_ccf76cf4",
+        "filename": "app/views/games/new.html.erb",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_4f5599c4",
       "range": {
         "startLine": 25,
         "startChar": 32,
@@ -122,6 +188,30 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_ecf23006",
+        "filename": "app/views/games/new.html.erb",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_ef9fcdb2",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 17
+      },
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_0f5e71e9",
         "filename": "db/migrate/20150721161519_create_games.rb",
         "patchSetId": 2
@@ -133,6 +223,24 @@
       "writtenOn": "2016-04-04T08:48:57Z",
       "side": 1,
       "message": "shouldn\u0027t be checked in right now",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_2c37f8b1",
+        "filename": "db/migrate/20150721161519_create_games.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "how to uncheck?",
+      "parentUuid": "baa041b7_0f5e71e9",
       "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
@@ -156,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_ecc910ae",
+        "filename": "vendor/assets/javascripts/select2.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_cf40890a",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_af454518",
         "filename": "vendor/assets/javascripts/select2.min.js",
         "patchSetId": 2
@@ -167,6 +293,24 @@
       "writtenOn": "2016-04-04T08:49:00Z",
       "side": 1,
       "message": "I think we don\u0027t need this? Select2 is already declared as a bower dependency.",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_ccce4cb4",
+        "filename": "vendor/assets/javascripts/select2.min.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_af454518",
       "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
@@ -190,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_acc42892",
+        "filename": "vendor/assets/stylesheets/select2.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_8f4ba12b",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_6f485d2e",
         "filename": "vendor/assets/stylesheets/select2.min.css",
         "patchSetId": 2
@@ -201,6 +363,24 @@
       "writtenOn": "2016-04-04T08:49:00Z",
       "side": 1,
       "message": "I think we don\u0027t need this? Select2 is already declared as a bower dependency.",
+      "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_8cc16483",
+        "filename": "vendor/assets/stylesheets/select2.min.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T09:05:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_6f485d2e",
       "revId": "0da84b1e53ebd7455a7a6256b3672ee15b7a07df",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
