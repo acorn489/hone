@@ -1,5 +1,5 @@
 class SessionsController < Devise::SessionsController
-  before_action :authenticate_user
+  before_action :authenticate_user!
 
   def create
     rtn = super
