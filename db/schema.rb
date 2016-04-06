@@ -98,13 +98,13 @@ ActiveRecord::Schema.define(version: 20160405162324) do
     t.string   "username",               limit: 255
     t.string   "platform",               limit: 255
     t.string   "gender",                 limit: 255
-    t.string   "name_guardian",           limit: 255
+    t.string   "name_guardian",          limit: 255
     t.string   "country",                limit: 255
     t.date     "birthdate"
     t.string   "best_language",          limit: 255
     t.string   "languages",              limit: 255
     t.string   "study_language",         limit: 255
-    t.string   "email_guardian",          limit: 255
+    t.string   "email_guardian",         limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
