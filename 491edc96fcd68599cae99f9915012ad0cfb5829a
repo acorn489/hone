@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_0c367403",
+        "filename": "gulp/assets/stylesheets/home.scss",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1008004
+      },
+      "writtenOn": "2016-04-06T12:08:03Z",
+      "side": 1,
+      "message": "Delete line 126",
+      "revId": "491edc96fcd68599cae99f9915012ad0cfb5829a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
