@@ -42,3 +42,6 @@ public/assets/
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+
+# npm debug
+npm-debug.log

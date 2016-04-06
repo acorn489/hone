@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
       current_user if current_user.is_a?(k.constantize)
     end
 
-    define_method "authenticate_#{k.underscore}!" do
-    |opts={}|
+    define_method "authenticate_#{k.underscore}!" do |_opts = {}|
       send("current_#{k.underscore}") || not_authorized
     end
   end
@@ -24,7 +23,7 @@ class ApplicationController < ActionController::Base
     elsif current_user
       return 'home'
     end
-    return 'welcome'
+    'welcome'
   end
 
   helper_method :home_controller
@@ -37,12 +36,13 @@ class ApplicationController < ActionController::Base
 
   def not_authorized
     flash[:error] = "You don't have permission to access the requested page."
-    redirect_to(:controller => 'welcome', :action => 'show')
+    redirect_to(controller: 'welcome', action: 'show')
   end
 
   protected
+
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :name, :email, :password, :password_confirmation, :type, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :name, :name_guardian, :email, :email_guardian, :birthdate, :best_language, :languages, :study_language, :password, :password_confirmation, :platform, :gender, :country, :type, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :password_confirmation, :type, :current_password) }
   end

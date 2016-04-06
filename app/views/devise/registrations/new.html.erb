@@ -1,38 +1,137 @@
 <div class="container">
-  <%= render partial: "partials/flash" %>
+  <h1>Registration</h1>
+  <br>
+  <!--TODO create a correct style, not a break -->
+  <div data-toggle="buttons" id="user_type" class="btn-group">
+    <label class="btn btn-primary active">
+      <%= radio_button_tag :type, "student", true %>
+      Student
+    </label>
+    <label class="btn btn-primary">
+      <%= radio_button_tag :type, "developer", false %>
+      Developer
+    </label>
+  </div>
   <% header "Sign Up" %>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:id => 'studentForm'}) do |f| %>
+  <%= devise_error_messages! %>
 
-      <div class="form-group">
-        <%= f.label :username %>
-        <%= f.text_field :username, class: 'form-control' %>
-      </div>
+  <%= f.hidden_field(:type, :value => "Student"); %>
 
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
+  <div class="form-group">
+    <%= f.label "I'm using", class: 'control-label' %><br>
+    <%= f.select(:platform, ["Android", "iOS", "Both"], {}, {:class=>"form-control"}) %>
+  </div>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-      </div>
+  <div class="form-group">
+    <%= f.label :username %>
+    <%= f.text_field :username, class: 'form-control' %>
+  </div>
 
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-        <% if @validatable %>
-            <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
-        <% end %>
-      </div>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Sign up", class: 'btn btn-primary' %>
-      </div>
+  <div class="form-group">
+    <%= f.label "Day of Birth" %>
+    <%= f.text_field :birthdate, class: 'form-control', id: 'datepicker' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    <% if @validatable %>
+    <span class="help-block"><%= @minimum_password_length %>
+      characters minimum</span>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Gender", class: 'control-label' %><br>
+    <%= f.select(:gender, ["Male", "Female"], {}, {:class=>"form-control"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "My best language", class: 'control-label' %><br>
+    <%= f.select(:best_language, [], {}, {:class=>"form-control language"}) %>
+  </div>
+
+  <!-- Should use a tagging system to select multiple items nicely -->
+  <div class="form-group">
+    <%= f.label "My languages", class: 'control-label' %><br>
+    <%= f.select(:languages, [], {}, {:class=>"form-control language"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Language of study", class: 'control-label' %><br>
+    <%= f.select(:study_language, ["English"], {}, {:class=>"form-control"}) %>
+  </div>
+
+  <br>
+  <h3>Guardian</h3>
+  <hr>
+
+  <div class="form-group">
+    <%= f.label "Name of Guardian" %>
+    <%= f.text_field :name_guardian, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Email" %>
+    <%= f.email_field :email_guardian, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Country", class: 'control-label' %><br>
+    <%= f.text_field(:country, {:class=>"form-control"}) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+  </div>
+  <% end %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:id => 'developerForm'}) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.hidden_field(:type, :value => "Developer"); %>
+
+  <div class="form-group">
+    <%= f.label :username %>
+    <%= f.text_field :username, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    <% if @validatable %>
+    <span class="help-block"><%= @minimum_password_length %>
+      characters minimum</span>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+  </div>
   <% end %>
 </div>
