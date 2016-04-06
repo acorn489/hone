@@ -1,11 +1,11 @@
+<section id="sectionTop" class="headImage">
+  <div class="imgContainer bg_greydark">
+    <div id="headerImage"/>
+  </div>
+</section>
+<div class="horizontalLine gradient"></div>
 <div class="container">
   <%= render partial: "partials/flash" %>
-  <section id="sectionTop" class="headImage">
-    <div class="imgContainer bg_greydark">
-      <img src="<%= gulp_asset_path('images/header-image.jpg') %>" alt="" />
-    </div>
-  </section>
-  <div class="horizontalLine gradient"></div>
   <section id="sectionCourse" class="body">
     <div class="courseRow">
       <div class="courseRowHeader">
@@ -15,21 +15,20 @@
         <div class="carousel-list">
           <ul id="yourCourseList">
             <% @courses.each do |course| %>
-                <li>
-                  <%= link_to({:controller => 'skills', :course => course.slug, :action => 'show'}, {class: "courseLink"}) do %>
-                      <div class="course" id="mathCourse">
-                        <div class="imgContainer">
-                          <div class="mathIcon">
-                            <div class="color-box transparent-red">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="details">
-                          <div class="title">Math</div>
-                        </div>
-                      </div>
-                  <% end %>
-                </li>
+            <li>
+              <%= link_to({:controller => 'skills', :course => course.slug, :action => 'show'}, {class: "courseLink"}) do %>
+              <div class="course" id="mathCourse">
+                <div class="imgContainer">
+                  <div class="mathIcon">
+                    <div class="color-box transparent-red"></div>
+                  </div>
+                </div>
+                <div class="details">
+                  <div class="title">Math</div>
+                </div>
+              </div>
+              <% end %>
+            </li>
             <% end %>
           </ul>
         </div>
