@@ -26,11 +26,13 @@ module.exports = {
     src: "bower.json",
     dest: publicAssets + '/javascripts',
     overrides: { // These bower modules' 'main' is not declared, so we have to do it ourselves
-      "jquery-classywiggle": {main: ["./src/js/jquery.classywiggle.js"]}
+      "jquery-classywiggle": {
+        main: ["./src/js/jquery.classywiggle.js"]
+      }
     }
   },
   vendor_css: {
-    src: ["bower_components/bootstrap/dist/css/bootstrap.min.css"],
+    src: ["bower_components/bootstrap/dist/css/bootstrap.min.css", "bower_components/country-select-js/build/css/countrySelect.min.css", "bower_components/jquery-ui/themes/flick/jquery-ui.min.css"],
     dest: publicAssets + '/stylesheets'
   },
   browserify: {

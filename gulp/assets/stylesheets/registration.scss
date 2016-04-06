@@ -1,0 +1,16 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user_type {
+  display: table;
+  margin: 0 auto !important;
+}
+
+.country-select {
+  width: 100%;
+}
+
+.country-select .flag {
+	background-image: url("../assets/images/flags.png") !important;
+}
