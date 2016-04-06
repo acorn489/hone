@@ -163,6 +163,7 @@ export default class NewRegistration {
     $("#datepicker").datepicker({
       changeMonth: true,
       changeYear: true,
+      dateFormat: 'yy-mm-dd',
       yearRange: '-16y:c+nn',
       maxDate: '-6y:c+nn'
     });
