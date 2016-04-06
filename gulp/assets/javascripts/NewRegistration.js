@@ -26,7 +26,6 @@ export default class NewRegistration {
       "Afrikaans",
       "Akan",
       "Albanian",
-      "American Sign Language",
       "Amharic",
       "Arabic",
       "Aragonese",
@@ -162,7 +161,6 @@ export default class NewRegistration {
     });
 
     $("#datepicker").datepicker({
-      dateFormat: 'MM yy',
       changeMonth: true,
       changeYear: true,
       yearRange: '-16y:c+nn',
