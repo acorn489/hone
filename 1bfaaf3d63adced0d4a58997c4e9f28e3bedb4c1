@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_ac68a8bb",
+        "filename": "app/views/games/new.html.erb",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-06T08:49:57Z",
+      "side": 1,
+      "message": "we don\u0027t need to log them",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 31
+      },
+      "revId": "1bfaaf3d63adced0d4a58997c4e9f28e3bedb4c1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
