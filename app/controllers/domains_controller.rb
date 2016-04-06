@@ -1,5 +1,5 @@
 class DomainsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user
 
   def show
     @domain = Domain.friendly.find(params[:slug])

@@ -1,7 +1,7 @@
 module Api
   module V1
     class StudentsController < BaseController
-      before_action :authenticate_user!
+      before_action :authenticate_user
 
       def skills
 
