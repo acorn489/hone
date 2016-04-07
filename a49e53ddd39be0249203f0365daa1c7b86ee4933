@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_c6a3c49d",
+        "filename": "app/views/games/new.html.erb",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-07T11:48:42Z",
+      "side": 1,
+      "message": "ruby syntax?",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 91
+      },
+      "revId": "a49e53ddd39be0249203f0365daa1c7b86ee4933",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
