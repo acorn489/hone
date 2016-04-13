@@ -8,7 +8,7 @@ PORT=8081
 HOST="0.0.0.0"
 USER="student"
 LOGFILE="kidmooc.log"
-KIDMOOC_ROOT="/home/$USER/kidmooc/"
+KIDMOOC_ROOT="/home/$USER/hone/"
 SERVER=false
 
 eval set -- "$INPUT_ARGS"
