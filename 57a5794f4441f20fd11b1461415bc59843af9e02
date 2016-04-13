@@ -68,6 +68,30 @@
       "revId": "57a5794f4441f20fd11b1461415bc59843af9e02",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_d76c779e",
+        "filename": "app/views/devise/registrations/edit.html.erb",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-13T08:49:12Z",
+      "side": 1,
+      "message": "Done - @dlatt not to blame.",
+      "parentUuid": "baa041b7_b75213dc",
+      "range": {
+        "startLine": 128,
+        "startChar": 7,
+        "endLine": 128,
+        "endChar": 41
+      },
+      "revId": "57a5794f4441f20fd11b1461415bc59843af9e02",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
