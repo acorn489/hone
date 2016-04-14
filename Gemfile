@@ -48,3 +48,4 @@ end
 gem 'friendly_id'
 gem 'paloma', '~> 5.0.0'
 gem 'factory_girl_rails'
+gem 'doorkeeper'
