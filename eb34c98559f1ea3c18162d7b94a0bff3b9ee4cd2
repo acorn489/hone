@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_83258aac",
+        "filename": "app/controllers/skill_controller.rb",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-14T19:21:11Z",
+      "side": 1,
+      "message": "remove if not neccessary",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 64
+      },
+      "revId": "eb34c98559f1ea3c18162d7b94a0bff3b9ee4cd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_633ba6d2",
+        "filename": "app/controllers/skills_controller.rb",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-14T19:21:11Z",
+      "side": 1,
+      "message": "wse/delete this whole line please",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 4
+      },
+      "revId": "eb34c98559f1ea3c18162d7b94a0bff3b9ee4cd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_835c6a26",
+        "filename": "app/views/skill/show.html.erb",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-14T19:21:11Z",
+      "side": 1,
+      "message": "what about the ratings?",
+      "revId": "eb34c98559f1ea3c18162d7b94a0bff3b9ee4cd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_23359ed9",
+        "filename": "app/views/skill/show.html.erb",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-14T19:21:11Z",
+      "side": 1,
+      "message": "title not titel :D",
+      "range": {
+        "startLine": 35,
+        "startChar": 28,
+        "endLine": 35,
+        "endChar": 33
+      },
+      "revId": "eb34c98559f1ea3c18162d7b94a0bff3b9ee4cd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_03329af1",
+        "filename": "app/views/skill/show.html.erb",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-14T19:21:11Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 53,
+        "startChar": 28,
+        "endLine": 53,
+        "endChar": 34
+      },
+      "revId": "eb34c98559f1ea3c18162d7b94a0bff3b9ee4cd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_e34d7673",
+        "filename": "app/views/skill/show.html.erb",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-14T19:21:11Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 71,
+        "startChar": 28,
+        "endLine": 71,
+        "endChar": 33
+      },
+      "revId": "eb34c98559f1ea3c18162d7b94a0bff3b9ee4cd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_433f82b4",
+        "filename": "gulp/assets/javascripts/Skill.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-14T19:21:11Z",
+      "side": 1,
+      "message": "remove this..this is for the country selection in the registration part..",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 16
+      },
+      "revId": "eb34c98559f1ea3c18162d7b94a0bff3b9ee4cd2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
