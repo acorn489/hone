@@ -20,22 +20,22 @@
   </div>
   <div class="form-group">
     <%= f.label "Skills:" %><br>
-    <%= select_tag(:skillBox, {}, {:class=>"skillBox form-control selectpicker",  :multiple => true}) %>
+    <select class="skillBox form-control selectpicker" multiple></select>
   </div>
   <div class="form-group">
     <%= f.submit "Add my Game", class: 'btn btn-default' %>
     <% end %>
   </div>
+
+  <script type="text/javascript">
+    $(function () {
+      $(".skillBox").select2();
+    });
+
+    $.getJSON("../api/v1/skills?course_id=1", function (skills) {
+      for (var i = 0; i < skills.length; i++) {
+        $('.skillBox').append('<option value="' + skills[i].id + '">' + skills[i].title + ' [Grade ' + skills[i].grade + ']</option>')
+      }
+    });
+  </script>
 </div>
-
-<script type="text/javascript">
-  $(function () {
-    $(".skillBox").select2();
-  });
-
-  $.getJSON("../api/v1/skills?course_id=1", function (skills) {
-    for (var i = 0; i < skills.length; i++) {
-      $('.skillBox').append('<option value="' + skills[i].id + '">' + skills[i].title + ' [Grade ' + skills[i].grade + ']</option>')
-    }
-  });
-</script>
