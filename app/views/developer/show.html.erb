@@ -1,4 +1,31 @@
-<h1>Developer Panel</h1>
-<%= link_to({:controller => 'games', :action => 'new'}) do %>
-  <button>Add new Game</button>
-<% end %>
+<div class="container developerHome">
+<%= render partial: "partials/flash" %>
+<h1>Your games</h1>
+  <div class="buttonContainer">
+    <%= link_to("Add a new game", {:controller => 'games', :action => 'new'}, class: "btn btn-primary") %>
+  </div>
+  <table class="table">
+    <thead>
+      <th>Name</th>
+      <th>Skills</th>
+      <th>Android link</th>
+      <th>iOS link</th>
+      <th>Web link</th>
+      <th>Client ID (OAuth)</th>
+    </thead>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.title %></td>
+        <td>
+          <% game.skills.each do |skill| %>
+            <span class="label label-default"><%= skill.title %></span>
+          <% end %>
+        </td>
+        <td><%= game.android_link ? link_to(game.android_link) : "-" %></td>
+        <td><%= game.ios_link ? link_to(game.ios_link) : "-" %></td>
+        <td><%= game.web_link ? link_to(game.web_link) : "-" %></td>
+        <td><%= game.oauth_applications.first()&.uid %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
