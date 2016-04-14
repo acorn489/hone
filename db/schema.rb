@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414121803) do
+ActiveRecord::Schema.define(version: 20160415000818) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -51,12 +51,10 @@ ActiveRecord::Schema.define(version: 20160414121803) do
     t.string   "android_link", limit: 255
     t.string   "ios_link",     limit: 255
     t.string   "web_link",     limit: 255
-    t.integer  "skill_id",     limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "developer_id", limit: 4
   end
-
-  add_index "games", ["skill_id"], name: "index_games_on_skill_id", using: :btree
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer  "resource_owner_id", limit: 4,     null: false

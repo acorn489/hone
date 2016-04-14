@@ -14,7 +14,8 @@ FactoryGirl.define do
     android_link ""
     ios_link ""
     web_link ""
-    skill_id 1
+    redirect_uri "https://foo.bar"
+    skills_list ["foo", "bar"]
   end
 
   factory :application, class: Doorkeeper::Application do
