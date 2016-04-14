@@ -59,23 +59,23 @@
 
   <div class="form-group">
     <%= f.label "Gender", class: 'control-label' %><br>
-    <%= f.select(:gender, ["Male", "Female"], {}, {:class=>"form-control"}) %>
+    <%= f.select(:gender, ["Male", "Female"], {}, {:class=>"form-control selectPicker"}) %>
   </div>
 
   <div class="form-group">
     <%= f.label "My best language", class: 'control-label' %><br>
-    <%= f.select(:best_language, [], {}, {:class=>"form-control language"}) %>
+    <%= f.select(:best_language, [], {}, {:class=>"form-control selectPicker language"}) %>
   </div>
 
   <!-- Should use a tagging system to select multiple items nicely -->
   <div class="form-group">
     <%= f.label "My languages", class: 'control-label' %><br>
-    <%= f.select(:languages, [], {}, {:class=>"form-control language"}) %>
+    <%= f.select(:languages, [], {}, {:class=>"form-control selectPicker language", :multiple => true}) %>
   </div>
 
   <div class="form-group">
     <%= f.label "Language of study", class: 'control-label' %><br>
-    <%= f.select(:study_language, ["English"], {}, {:class=>"form-control"}) %>
+    <%= f.select(:study_language, ["English"], {}, {:class=>"form-control selectPicker"}) %>
   </div>
 
   <br>

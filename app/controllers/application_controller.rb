@@ -39,8 +39,6 @@ class ApplicationController < ActionController::Base
     redirect_to(controller: 'welcome', action: 'show')
   end
 
-  protected
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :name, :name_guardian, :email, :email_guardian, :birthdate, :best_language, :languages, :study_language, :password, :password_confirmation, :platform, :gender, :country, :type, :remember_me) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :password, :remember_me) }

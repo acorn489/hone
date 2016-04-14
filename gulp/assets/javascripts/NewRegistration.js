@@ -159,4 +159,5 @@ $(function() {
     yearRange: '-16y:c+nn',
     maxDate: '-6y:c+nn'
   });
+  $(".selectPicker").select2();
 });
