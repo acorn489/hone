@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'shared_contexts'
 
-describe 'Skills API', :type => :request do
+describe 'Web API', :type => :request do
   include_context "api request authentication helper methods"
   include_context "api request global before and after hooks"
 

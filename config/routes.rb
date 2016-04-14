@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  use_doorkeeper
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   devise_for :users, controllers: { registrations: 'registrations' }
@@ -71,7 +72,8 @@ Rails.application.routes.draw do
   # All routes to communicate with the API methods
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      get 'skills' => 'students#skills'
+      get 'skills' => 'web_api#skills'
+      post 'complete_skill' => 'game_api#complete_skill'
     end
   end
 end

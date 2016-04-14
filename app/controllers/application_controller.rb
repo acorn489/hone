@@ -45,4 +45,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :best_language, :languages, :study_language, :password, :password_confirmation, :platform, :type, :current_password) }
   end
+
+  def current_resource_owner
+    puts doorkeeper_token.resource_owner_id
+    Game.find_by_id(doorkeeper_token.resource_owner_id) if doorkeeper_token
+  end
 end
