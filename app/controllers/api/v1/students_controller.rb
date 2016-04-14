@@ -1,10 +1,8 @@
 module Api
   module V1
     class StudentsController < BaseController
-      before_action :authenticate_user!
-
       def skills
-
+        return not_authorized unless current_user
         unless params[:course_id].present?
           return render nothing: true, status: :bad_request
         end
@@ -46,7 +44,6 @@ module Api
             }
           }
         end
-
       end
 
     end
