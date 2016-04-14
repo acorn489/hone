@@ -23,6 +23,7 @@ module Hone20
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.assets.paths << Rails.root.join("public", "assets", "stylesheets")
     config.assets.paths << Rails.root.join("public", "assets", "javascripts")
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
