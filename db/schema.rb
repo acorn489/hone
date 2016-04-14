@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405162324) do
+ActiveRecord::Schema.define(version: 20160414075308) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20160405162324) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  add_index "game_skills", ["game_id", "skill_id"], name: "index_game_skills_on_game_id_and_skill_id", unique: true, using: :btree
 
   create_table "games", force: :cascade do |t|
     t.string   "title",        limit: 255
