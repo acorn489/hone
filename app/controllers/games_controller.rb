@@ -6,19 +6,26 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(game_params)
-    skills.each do |item|
-      GameSkill.create(:game_id => @game.id, :skill_id => item)
+    @game = Game.new(game_params)
+    begin
+      unless @game.save
+        flash.now[:error] = @game.errors.full_messages.to_sentence
+        return render :new
+      end
+    rescue Exceptions::GameSkillCreateFailed,
+           Exceptions::OAuthApplicationCreateFailed => e
+      flash.now[:error] = e.message
+      return render :new
     end
-    redirect_to :action => 'new'
+    flash[:notice] = "Your game has been successfully saved."
+    redirect_to(:controller => home_controller, :action => 'show')
   end
 
   private
   def game_params
-    params.require(:game).permit(:title, :android_link, :ios_link, :web_link)
-  end
-
-  def skills
-    params[:skillBox]
+    params
+        .require(:game)
+        .permit(:title, :android_link, :ios_link, :web_link, :redirect_uri, :skills_list => [])
+        .merge(developer_id: current_developer.id)
   end
 end

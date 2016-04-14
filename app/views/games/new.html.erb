@@ -1,6 +1,6 @@
 <div class="container">
   <%= render partial: "partials/flash" %>
-  <h1>Add a new Game</h1>
+  <h1>Add a new game</h1>
   <%= form_for @game, url: {action: "create"}, html: {class: "form-group"} do |f| %>
   <div class="form-group">
     <%= f.label "Title:" %><br>
@@ -20,10 +20,14 @@
   </div>
   <div class="form-group">
     <%= f.label "Skills:" %><br>
-    <%= select_tag(:skillBox, {}, {:class=>"skillBox form-control selectpicker",  :multiple => true}) %>
+    <%= f.select :skills_list, [], {}, {:class=>"skillBox form-control selectpicker",  :multiple => true} %>
   </div>
   <div class="form-group">
-    <%= f.submit "Add my Game", class: 'btn btn-default' %>
+    <%= f.label "Redirect URI:" %><br>
+    <%= f.text_field :redirect_uri, class: 'form-control', :placeholder => "urn:ietf:wg:oauth:2.0:oob"  %><br>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Add my game", class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
