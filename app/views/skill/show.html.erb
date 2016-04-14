@@ -10,57 +10,80 @@
   <%= render partial: "partials/flash" %>
   <div class="content">
     <section id="skill-information">
-      <div class="game-list">
-        <div class="game">
-          <a href="https://play.google.com/store/apps/details?id=com.gadoworld.mathman" target="https://play.google.com/store/apps/details?id=com.gadoworld.mathman">
-            <div class="header">
-              <p class="titel">
-                Math Man
-              </p>
-            </div>
-            <div class="body">
-              <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
-            </div>
-            <div class="footer">
-              <div class="rating">
-                <div class="stars">
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                </div>
-                <p>12.354 Ratings</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="game">
-          <a href="https://play.google.com/store/apps/details?id=org.altervista.luma23.towerNumber" target="https://play.google.com/store/apps/details?id=org.altervista.luma23.towerNumber">
-            <div class="header">
-              <p class="titel">
-                Tower Number
-              </p>
-            </div>
-            <div class="body">
-              <img src="<%= gulp_asset_path('images/tower_number-icon.png') %>" alt=""/>
-            </div>
-            <div class="footer">
-              <div class="rating">
-                <div class="stars">
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                  <img src="<%= gulp_asset_path('images/star.png') %>" alt=""/>
-                  <img src="<%= gulp_asset_path('images/star_empty.png') %>" alt=""/>
-                </div>
-                <p>376 Ratings</p>
-              </div>
-            </div>
-          </a>
+      <div class="platform_ctn">
+        <div data-toggle="buttons" id="platform_type" class="btn-group">
+          <label class="btn btn-primary active">
+            <%= radio_button_tag :platform, "Android", true %>
+            Android
+          </label>
+          <label class="btn btn-primary">
+            <%= radio_button_tag :platform, "iOS", false %>
+            iOS
+          </label>
+          <label class="btn btn-primary">
+            <%= radio_button_tag :platform, "Web", false %>
+            Web
+          </label>
         </div>
       </div>
-  </section>
-</div>
-
+      <div class="game-list">
+        <% @games.each do |game| %>
+          <% if game.android_link != nil %>
+            <div class="game android_link">
+              <a href="<%= game.android_link %>" target="<%= game.android_link %>">
+                <div class="header">
+                  <p class="title">
+                    <%= game.title %>
+                  </p>
+                </div>
+                <div class="body">
+                  <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
+                </div>
+                <div class="footer">
+                  <div class="rating">
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+          <% if game.ios_link != nil %>
+            <div class="game ios_link">
+              <a href="<%= game.ios_link %>" target="<%= game.ios_link %>">
+                <div class="header">
+                  <p class="title">
+                    <%= game.title %>
+                  </p>
+                </div>
+                <div class="body">
+                  <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
+                </div>
+                <div class="footer">
+                  <div class="rating">
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+          <% if game.web_link != nil %>
+            <div class="game web_link">
+              <a href="<%= game.web_link %>" target="<%= game.web_link %>">
+                <div class="header">
+                  <p class="title">
+                    <%= game.title %>
+                  </p>
+                </div>
+                <div class="body">
+                  <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
+                </div>
+                <div class="footer">
+                  <div class="rating">
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+  </div>
 </div>

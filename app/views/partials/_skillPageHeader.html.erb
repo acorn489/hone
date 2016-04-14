@@ -3,21 +3,21 @@
   <div class="col-xs-10 container">
     <div class="header">
       <div class="col-sm-2 icon">
-        <img src="<%= gulp_asset_path('images/skill-page-grade-0.png') %>" alt="" />
+        <img src="<%= gulp_asset_path('images/skill-page-grade-'+@skill.grade.to_s+'.png') %>" alt="" />
       </div>
       <div class="col-sm-4 details">
         <ul>
-          <li><span class="category">Grade:</span> Kindergarden</li>
+          <li><span class="category">Grade:</span> <%= (@skill.grade === 0)? "Kindergarten": @skill.grade %></li>
           <li><span class="category">Difficult:</span> Easy</li>
           <li><span class="category">Process:</span> 0%</li>
         </ul>
       </div>
       <div class="col-sm-6 desc">
         <p class="category">
-          <b>Decription</b>
+          <b>Description</b>
         </p>
         <p>
-          Count to 100 by ones and by tens.
+          <%=@skill.description %>
         </p>
       </div>
     </div>
