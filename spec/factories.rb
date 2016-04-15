@@ -8,6 +8,12 @@ FactoryGirl.define do
     password_confirmation '12341234'
   end
 
+  factory :game_skill do
+    id 1
+    skill_id 1
+    game_id 1
+  end
+
   factory :game do
     title "mathsman"
     image ""
@@ -27,12 +33,6 @@ FactoryGirl.define do
     scopes ""
     owner_id 1
     owner_type "Game"
-  end
-
-  factory :game_skill do
-    id 1
-    skill_id 1
-    game_id 1
   end
 
   factory :developer do

@@ -8,7 +8,19 @@ module Api
           return render nothing: true, status: :bad_request
         end
         begin
-          GameSkill.create(:game_id => current_resource_owner.id, :skill_id => params[:skill_id])
+          unless (state = StudentSkillState.find_by(:skill_id => params[:skill_id]) && state && state.completed)
+            if state && !state.completed
+              state.completed = true
+              state.save
+            else
+              StudentSkillState.create(
+                  :student_id => Student.find_by(:id => doorkeeper_token.resource_owner_id).id,
+                  :skill_id => params[:skill_id],
+                  :completed => true,
+                  :collected => false
+              )
+            end
+          end
         rescue ActiveRecord::RecordNotUnique
           # ignored
         end
