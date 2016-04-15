@@ -4,8 +4,9 @@ require 'shared_contexts'
 describe 'Game API', :type => :request do
   describe 'GET /api/v1/complete_skill' do
     let!(:application) {FactoryGirl.create :application}
+    let!(:student) {FactoryGirl.create :student}
     let!(:game) {FactoryGirl.create :game}
-    let!(:token) {Doorkeeper::AccessToken.create! :application_id => application.id, :resource_owner_id => game.id}
+    let!(:token) {Doorkeeper::AccessToken.create! :application_id => application.id, :resource_owner_id => student.id}
 
     before do
       allow_any_instance_of(ApplicationController).to receive(:doorkeeper_token) {token}
@@ -21,16 +22,12 @@ describe 'Game API', :type => :request do
     it 'adds a new completion entry' do
       expect {
         post "/api/v1/complete_skill", {skill_id: 2}
-      }.to change { GameSkill.count }
+      }.to change { StudentSkillState.count }
       expect(response.status).to eq 200
     end
 
     it 'doesnt add a new completion entry if one already exists' do
-      FactoryGirl.create(:game_skill, skill_id: 1, game_id: game.id)
-      expect {
-        post "/api/v1/complete_skill", {skill_id: 1}
-      }.to_not change { GameSkill.count }
-      expect(response.status).to eq 200
+      # TODO
     end
   end
 end

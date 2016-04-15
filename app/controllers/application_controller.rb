@@ -48,4 +48,5 @@ class ApplicationController < ActionController::Base
     puts doorkeeper_token.resource_owner_id
     Game.find_by_id(doorkeeper_token.resource_owner_id) if doorkeeper_token
   end
+
 end
