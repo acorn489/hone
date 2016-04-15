@@ -72,17 +72,17 @@ Skill.create([
                {title: 'Partition circles and rectangles into two, three, or four equal shares', description: 'Partition circles and rectangles into two, three, or four equal shares, describe the shares using the words halves, thirds, half of, a third of, etc., and describe the whole as two halves, three thirds, four fourths. Recognize that equal shares of identical wholes need not have the same shape.', grade: 2, domain: Domain.fourth, course: Course.first},
              ])
 
-Game.create(title: 'Maths Man')
-GameSkill.create(game_id: 1, skill_id: 1);
+Game.create(title: 'Maths Man', redirect_uri: 'urn:ietf:wg:oauth:2.0:oob')
+GameSkill.create(game_id: 1, skill_id: 1)
 
-Game.create(title: 'Maths Man 2')
-GameSkill.create(game_id: 2, skill_id: 1);
+Game.create(title: 'Maths Man 2', redirect_uri: 'urn:ietf:wg:oauth:2.0:oob')
+GameSkill.create(game_id: 2, skill_id: 1)
 
-Game.create(title: 'Build a tower')
-GameSkill.create(game_id: 3, skill_id: 2);
+Game.create(title: 'Build a tower', redirect_uri: 'urn:ietf:wg:oauth:2.0:oob')
+GameSkill.create(game_id: 3, skill_id: 2)
 
-Game.create(title: 'Build a tower 2')
-GameSkill.create(game_id: 4, skill_id: 2);
+Game.create(title: 'Build a tower 2', redirect_uri: 'urn:ietf:wg:oauth:2.0:oob')
+GameSkill.create(game_id: 4, skill_id: 2)
 
 StudentSkillState.create! :student_id => 1, :skill_id => 1, :completed => true, :collected => false
 StudentSkillState.create! :student_id => 1, :skill_id => 2, :completed => true, :collected => true

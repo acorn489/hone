@@ -16,7 +16,7 @@ class Game < ActiveRecord::Base
     unless app.valid?
       raise Exceptions::OAuthApplicationCreateFailed.new(app.errors.full_messages.to_sentence)
     end
-    skills_list.drop(1).each do |item|
+    skills_list&.drop(1)&.each do |item|
       skill = GameSkill.create(:game_id => self.id, :skill_id => item)
       unless skill.valid?
         raise Exceptions::GameSkillCreateFailed.new(app.errors.full_messages.to_sentence)
