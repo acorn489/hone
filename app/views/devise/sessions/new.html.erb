@@ -1,8 +1,8 @@
 <div class="container">
-  <%= render partial: "partials/flash" %>
   <h2>Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render partial: "partials/flash" %>
       <div class="form-group">
         <%= f.label :login %><br/>
         <%= f.text_field :login, class: 'form-control' %>
