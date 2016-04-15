@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_38002834",
+        "filename": "app/controllers/games_controller.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-15T09:38:24Z",
+      "side": 1,
+      "message": "not very elloquent..",
+      "range": {
+        "startLine": 16,
+        "startChar": 55,
+        "endLine": 16,
+        "endChar": 56
+      },
+      "revId": "f29f4ac94a0d6f4e896c57a80f45374357120552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_5803ec42",
+        "filename": "app/controllers/games_controller.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-15T09:38:24Z",
+      "side": 1,
+      "message": "r",
+      "revId": "f29f4ac94a0d6f4e896c57a80f45374357120552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_18fd643a",
+        "filename": "app/controllers/games_controller.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-15T09:38:24Z",
+      "side": 1,
+      "message": "why you have to permit the redirect_uri? is this really neccessary ?",
+      "range": {
+        "startLine": 28,
+        "startChar": 61,
+        "endLine": 28,
+        "endChar": 74
+      },
+      "revId": "f29f4ac94a0d6f4e896c57a80f45374357120552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_b89af812",
+        "filename": "gulp/assets/stylesheets/developers-home.sass",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-15T09:38:24Z",
+      "side": 1,
+      "message": "please use curly braces..easier to read..",
+      "revId": "f29f4ac94a0d6f4e896c57a80f45374357120552",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
