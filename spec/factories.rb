@@ -21,7 +21,7 @@ FactoryGirl.define do
     ios_link ""
     web_link ""
     redirect_uri "https://foo.bar"
-    skills_list ["foo", "bar"]
+    skills_list [1]
   end
 
   factory :application, class: Doorkeeper::Application do
@@ -31,8 +31,6 @@ FactoryGirl.define do
     secret "6a0999d3d2a504438b0fca65fb9a69bf4e14d196f4d7e7c90ad9433012af3b32"
     redirect_uri "urn:ietf:wg:oauth:2.0:oob"
     scopes ""
-    owner_id 1
-    owner_type "Game"
   end
 
   factory :developer do
