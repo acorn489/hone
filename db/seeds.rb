@@ -84,6 +84,6 @@ GameSkill.create(game_id: 3, skill_id: 2)
 Game.create(title: 'Build a tower 2', redirect_uri: 'urn:ietf:wg:oauth:2.0:oob')
 GameSkill.create(game_id: 4, skill_id: 2)
 
-StudentSkillState.create! :student_id => 1, :skill_id => 1, :completed => true, :collected => false
-StudentSkillState.create! :student_id => 1, :skill_id => 2, :completed => true, :collected => true
-StudentSkillState.create! :student_id => 2, :skill_id => 2, :completed => true, :collected => true
+CompletedStudentSkill.create! :student_id => 1, :skill_id => 1, :collected => false
+CompletedStudentSkill.create! :student_id => 1, :skill_id => 2, :collected => true
+CompletedStudentSkill.create! :student_id => 2, :skill_id => 2, :collected => true

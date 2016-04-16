@@ -22,7 +22,7 @@ describe 'Game API', :type => :request do
     it 'adds a new completion entry' do
       expect {
         post "/api/v1/complete_skill", {skill_id: 2}
-      }.to change { StudentSkillState.count }
+      }.to change { CompletedStudentSkill.count }
       expect(response.status).to eq 200
     end
 

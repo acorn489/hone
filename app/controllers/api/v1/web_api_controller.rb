@@ -13,11 +13,11 @@ module Api
           render :json =>
             Skill
               .joins(
-                'LEFT JOIN student_skill_states ON student_skill_states.skill_id = skills.id AND student_skill_states.student_id = ' +
+                'LEFT JOIN completed_student_skills ON completed_student_skills.skill_id = skills.id AND completed_student_skills.student_id = ' +
                   ActiveRecord::Base.sanitize(session['warden.user.user.key'][0][0])
               )
               .select(
-                'student_skill_states.*',
+                'completed_student_skills.*',
                 'skills.*'
               )
               .where(
@@ -29,7 +29,7 @@ module Api
                   :grade => skill.grade,
                   :title => skill.title,
                   :domain_id => skill.domain_id,
-                  :completed => skill.completed?,
+                  :completed => !skill.collected.nil?,
                   :collected => skill.collected?
                 }
               }

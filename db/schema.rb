@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415000818) do
+ActiveRecord::Schema.define(version: 20160418000819) do
+
+  create_table "completed_student_skills", force: :cascade do |t|
+    t.integer  "student_id", limit: 4
+    t.integer  "skill_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.boolean  "collected",  limit: 1
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -113,15 +121,6 @@ ActiveRecord::Schema.define(version: 20160415000818) do
   add_index "skills", ["course_id"], name: "index_skills_on_course_id", using: :btree
   add_index "skills", ["domain_id"], name: "index_skills_on_domain_id", using: :btree
   add_index "skills", ["slug"], name: "index_skills_on_slug", using: :btree
-
-  create_table "student_skill_states", force: :cascade do |t|
-    t.integer  "student_id", limit: 4
-    t.integer  "skill_id",   limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.boolean  "completed",  limit: 1
-    t.boolean  "collected",  limit: 1
-  end
 
   create_table "user_languages", force: :cascade do |t|
     t.integer  "user_id",    limit: 4,   null: false
