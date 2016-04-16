@@ -44,10 +44,9 @@ FactoryGirl.define do
     password_confirmation '12341234'
   end
 
-  factory :student_skill_state do
+  factory :completed_student_skills do
     student_id 1
     skill_id 1
-    completed true
     collected false
   end
 
