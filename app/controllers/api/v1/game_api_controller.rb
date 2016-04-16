@@ -8,18 +8,12 @@ module Api
           return render nothing: true, status: :bad_request
         end
         begin
-          unless (state = StudentSkillState.find_by(:skill_id => params[:skill_id]) && state && state.completed)
-            if state && !state.completed
-              state.completed = true
-              state.save
-            else
-              StudentSkillState.create(
-                  :student_id => Student.find_by(:id => doorkeeper_token.resource_owner_id).id,
-                  :skill_id => params[:skill_id],
-                  :completed => true,
-                  :collected => false
-              )
-            end
+          unless CompletedStudentSkills.find_by(:skill_id => params[:skill_id])
+            CompletedStudentSkills.create(
+                :student_id => Student.find_by(:id => doorkeeper_token.resource_owner_id).id,
+                :skill_id => params[:skill_id],
+                :collected => false
+            )
           end
         rescue ActiveRecord::RecordNotUnique
           # ignored
