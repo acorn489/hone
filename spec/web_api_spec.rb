@@ -44,7 +44,7 @@ describe 'Web API', :type => :request do
 
     describe 'as developer' do
       it 'returns array with skills' do
-        FactoryGirl.create :student_skill_state
+        FactoryGirl.create :completed_student_skill
         sign_in(developer)
 
         get "/api/v1/skills", {course_id: skill.course_id}
@@ -55,7 +55,7 @@ describe 'Web API', :type => :request do
       end
 
       it 'response has skill properties without completion attributes' do
-        FactoryGirl.create :student_skill_state
+        FactoryGirl.create :completed_student_skill
         sign_in(developer)
 
         get "/api/v1/skills", {course_id: skill.course_id}
@@ -73,7 +73,7 @@ describe 'Web API', :type => :request do
 
     describe 'as student' do
       it 'returns array with skills and states' do
-        FactoryGirl.create :student_skill_state
+        FactoryGirl.create :completed_student_skill
         sign_in(student)
 
         get "/api/v1/skills", {course_id: skill.course_id}
@@ -95,7 +95,7 @@ describe 'Web API', :type => :request do
       end
 
       it 'returns stateful skills' do
-        FactoryGirl.create :student_skill_state
+        FactoryGirl.create :completed_student_skill
         sign_in(student)
 
         get "/api/v1/skills", {course_id: skill.course_id}
@@ -107,7 +107,7 @@ describe 'Web API', :type => :request do
       end
 
       it 'response has skill properties' do
-        FactoryGirl.create :student_skill_state
+        FactoryGirl.create :completed_student_skill
         sign_in(student)
 
         get "/api/v1/skills", {course_id: skill.course_id}
