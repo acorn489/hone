@@ -1,28 +1,42 @@
-== README
+= README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hone is a GamES (GAM)ified (E)lementary (S)chool MOOC for children who do not have access to schools.
 
-Things you may want to cover:
+{<img src="https://travis-ci.org/prismacon/hone.svg?branch=travis" alt="Build Status" />}[https://travis-ci.org/prismacon/hone]
+{<img src="https://img.shields.io/badge/deployed%20to-Heroku-79589F.svg" alt="Deployed to Heroku" />}[http://hone-kids.herokuapp.com/]
 
-* Ruby version
+https://raw.githubusercontent.com/prismacon/hone/master/hone_screen.png
 
-* System dependencies
+== Running Hone locally
 
-* Configuration
+=== Setting up Ruby
 
-* Database creation
+Before starting you need to set up a Ruby environment on your machine. You can use a version manager like rbenv or RVM to
+simplify the process:
 
-* Database initialization
+* rbenv[https://github.com/rbenv/rbenv]
+* RVM[https://rvm.io/]
 
-* How to run the test suite
+To install Ruby, refer to the documentation of the tool of your choice.
 
-* Services (job queues, cache servers, search engines, etc.)
+=== Setting up Node.js
+Install {Node.js}[https://nodejs.org/en/].
 
-* Deployment instructions
+=== Setting up MySQL
+* Install the {MySQL database server}[https://www.mysql.com/downloads/].
+* Start it.
+* Create a database named +hone2_0_development+ and grant rights to an user of your choice.
 
-* ...
+=== Running Hone
+Now that you have all the dependencies set up you can get Hone up and running:
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  $ git clone https://github.com/prismacon/hone.git
+  $ npm install
+  $ npm start
+  $ # Refer to your OS docs on how to export environment variables.
+  $ export HONE2_0_DEVELOPMENT_DATABASE_PASSWORD='yourdbpass'
+  $ export HONE2_0_DEVELOPMENT_DATABASE_USERNAME='yourdbuser'
+  $ rake db:migrate
+  $ rake db:seed
+  $ rails s
+  $ npm watch # optional: will watch for asset changes and rebuild assets.
