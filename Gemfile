@@ -51,3 +51,4 @@ gem 'factory_girl_rails'
 gem 'doorkeeper'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'responders', '~> 2.0'
+gem 'rails_12factor', group: :production
