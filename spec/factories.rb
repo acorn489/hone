@@ -25,7 +25,6 @@ FactoryGirl.define do
   end
 
   factory :application, class: Doorkeeper::Application do
-    id 1
     name "mathsman"
     uid "889182cb6e3639ada8cfbd2edce0284dd363001a1666f7da525e1e4ff02e74d0"
     secret "6a0999d3d2a504438b0fca65fb9a69bf4e14d196f4d7e7c90ad9433012af3b32"
