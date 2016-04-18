@@ -4,9 +4,9 @@ require 'shared_contexts'
 describe 'Game API', :type => :request do
   describe 'GET /api/v1/complete_skill' do
     let!(:student) {FactoryGirl.create :student}
+    let!(:game) {FactoryGirl.create :game}
     let!(:application) {FactoryGirl.create :application, owner: game}
     let!(:skill) {FactoryGirl.create :skill}
-    let!(:game) {FactoryGirl.create :game}
     let!(:game_skill) {FactoryGirl.create :game_skill, game_id: game.id, skill_id: skill.id}
     let!(:token) {Doorkeeper::AccessToken.create! application_id: application.id, resource_owner_id: student.id}
 
