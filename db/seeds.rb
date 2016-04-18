@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Student.create! :username => 'husseny', :name => 'Husseny', :email => 'husseny@web.de', :password => '12341234', :password_confirmation => '12341234'
-Student.create! :username => 'student', :name => 'student', :email => 'student@web.de', :password => '12341234', :password_confirmation => '12341234'
+student1 = Student.create! :username => 'husseny', :name => 'Husseny', :email => 'husseny@web.de', :password => '12341234', :password_confirmation => '12341234'
+student2 = Student.create! :username => 'student', :name => 'student', :email => 'student@web.de', :password => '12341234', :password_confirmation => '12341234'
 Developer.create! :username => 'marco', :name => 'Marco', :email => 'marco@web.de', :password => '12341234', :password_confirmation => '12341234'
 Admin.create! :username => 'administrator', :name => 'Admin', :email => 'admin@web.de', :password => '12341234', :password_confirmation => '12341234'
 
@@ -84,6 +84,6 @@ GameSkill.create(game_id: 3, skill_id: 2)
 Game.create(title: 'Build a tower 2', redirect_uri: 'urn:ietf:wg:oauth:2.0:oob')
 GameSkill.create(game_id: 4, skill_id: 2)
 
-CompletedStudentSkill.create! :student_id => 1, :skill_id => 1, :collected => false
-CompletedStudentSkill.create! :student_id => 1, :skill_id => 2, :collected => true
-CompletedStudentSkill.create! :student_id => 2, :skill_id => 2, :collected => true
+CompletedStudentSkill.create! :student_id => student1.id, :skill_id => 1, :collected => false
+CompletedStudentSkill.create! :student_id => student1.id, :skill_id => 2, :collected => true
+CompletedStudentSkill.create! :student_id => student2.id, :skill_id => 2, :collected => true
