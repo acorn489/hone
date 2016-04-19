@@ -20,7 +20,7 @@
 
   <div class="form-group">
     <%= f.label "I'm using", class: 'control-label' %><br>
-    <%= f.select(:platform, ["Android", "iOS", "Both"], {}, {:class=>"form-control"}) %>
+    <%= f.select(:platform, ["Android", "iOS", "Both"], {}, {:class=>"form-control selectPicker"}) %>
   </div>
 
   <div class="form-group">
@@ -35,7 +35,7 @@
 
   <div class="form-group">
     <%= f.label "Day of Birth" %>
-    <%= f.text_field :birthdate, class: 'form-control', id: 'datepicker' %>
+    <%= f.text_field :birthdate, class: 'form-control', id: 'datepicker', :readonly => true %>
   </div>
 
   <div class="form-group">
@@ -67,7 +67,6 @@
     <%= f.select(:best_language, [], {}, {:class=>"form-control selectPicker language"}) %>
   </div>
 
-  <!-- Should use a tagging system to select multiple items nicely -->
   <div class="form-group">
     <%= f.label "My languages", class: 'control-label' %><br>
     <%= f.select(:languages, [], {}, {:class=>"form-control selectPicker language", :multiple => true}) %>
@@ -114,6 +113,11 @@
   <div class="form-group">
     <%= f.label :email %>
     <%= f.email_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "My languages", class: 'control-label' %><br>
+    <%= f.select(:languages, [], {}, {:class=>"form-control selectPicker language", :multiple => true}) %>
   </div>
 
   <div class="form-group">
