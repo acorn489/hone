@@ -23,7 +23,7 @@
       </div>
       <div class="game-list">
         <% @games.each do |game| %>
-          <% if game.android_link != nil %>
+          <% if !game.android_link&.empty? %>
             <div class="game android_link">
               <a href="<%= game.android_link %>" target="<%= game.android_link %>">
                 <div class="header">
@@ -41,7 +41,7 @@
               </a>
             </div>
           <% end %>
-          <% if game.ios_link != nil %>
+          <% if !game.ios_link&.empty? %>
             <div class="game ios_link">
               <a href="<%= game.ios_link %>" target="<%= game.ios_link %>">
                 <div class="header">
@@ -59,7 +59,7 @@
               </a>
             </div>
           <% end %>
-          <% if game.web_link != nil %>
+          <% if !game.web_link&.empty? %>
             <div class="game web_link">
               <a href="<%= game.web_link %>" target="<%= game.web_link %>">
                 <div class="header">
