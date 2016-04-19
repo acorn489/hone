@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: <%= ENV['HONE2_0_DEVELOPMENT_DATABASE_USERNAME'] %>
   password: <%= ENV['HONE2_0_DEVELOPMENT_DATABASE_PASSWORD'] %>
-  socket: /var/run/mysqld/mysqld.sock
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default

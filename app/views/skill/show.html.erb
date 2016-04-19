@@ -12,14 +12,18 @@
     <section id="skill-information">
       <div class="platform_ctn">
         <div data-toggle="buttons" id="platform_type" class="btn-group">
+          <% if current_student.platform == 'Android' || current_student.platform == 'Both' %>
           <label class="btn btn-primary active">
             <%= radio_button_tag :platform, "Android", true %>
             Android
           </label>
+          <% end %>
+          <% if current_student.platform == 'iOS' || current_student.platform == 'Both' %>
           <label class="btn btn-primary">
             <%= radio_button_tag :platform, "iOS", false %>
             iOS
           </label>
+          <% end %>
           <label class="btn btn-primary">
             <%= radio_button_tag :platform, "Web", false %>
             Web
