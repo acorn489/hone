@@ -3,6 +3,34 @@
   overflow: hidden;
 }
 
+.game-list {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.game-list::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.game-list::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.game-list::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+.game-list::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.game-list::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
 .skill-header .icon {
   background-color: #2DB0FF;
   text-align: left;
