@@ -16,6 +16,24 @@
       "revId": "1d0b6ec43452509325f64a781fa453fbcd63cdb5",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_87822893",
+        "filename": "README.rdoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-19T07:25:23Z",
+      "side": 1,
+      "message": "They are configured to be installed by npm\u0027s postinstall hook, see https://github.com/prismacon/hone/blob/master/package.json#L12",
+      "parentUuid": "baa041b7_07b73887",
+      "revId": "1d0b6ec43452509325f64a781fa453fbcd63cdb5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
