@@ -39,7 +39,13 @@
 
   $.getJSON("../api/v1/skills?course_id=1", function (skills) {
     for (var i = 0; i < skills.length; i++) {
-      $('.skillBox').append('<option value="' + skills[i].id + '">' + skills[i].title + ' [Grade ' + skills[i].grade + ']</option>')
+      $('.skillBox').append(
+        '<option value="' + skills[i].id + '">' +
+          "[" + skills[i].id + "] " +
+          skills[i].title + ' ' +
+          '(Grade ' + skills[i].grade + ')' +
+        '</option>'
+      )
     }
   });
 </script>
