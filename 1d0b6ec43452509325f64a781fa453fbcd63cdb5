@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_07b73887",
+        "filename": "README.rdoc",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-19T07:20:49Z",
+      "side": 1,
+      "message": "what about bower + additional bower components?",
+      "revId": "1d0b6ec43452509325f64a781fa453fbcd63cdb5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
