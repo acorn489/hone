@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <%= f.label "I'm using", class: 'control-label' %><br>
-    <%= f.select(:platform, ["Android", "iOS", "Both"], {}, {:class=>"form-control"}) %>
+    <%= f.select(:platform, ["Android", "iOS", "Both"], {}, {:class=>"form-control selectPicker"}) %>
   </div>
 
   <div class="form-group">
@@ -48,23 +48,19 @@
 
   <div class="form-group">
     <%= f.label "Gender", class: 'control-label' %><br>
-    <%= f.select(:gender, ["Male", "Female"], {}, {:class=>"form-control", :disabled => true }) %>
+    <%= f.select(:gender, ["Male", "Female"], {}, {:class=>"form-control selectPicker", :disabled => true }) %>
   </div>
 
   <div class="form-group">
     <%= f.label "My native language", class: 'control-label' %><br>
-    <%= f.select(:best_language, [], {}, {:class=>"form-control language", :disabled => true }) %>
+    <%= f.select(:best_language, [], {}, {:class=>"form-control language selectPicker", :disabled => true }) %>
   </div>
 
-  <!-- Should use a tagging system to select multiple items nicely -->
-  <div class="form-group">
-    <%= f.label "My languages", class: 'control-label' %><br>
-    <%= f.select(:languages, [], {}, {:class=>"form-control language"}) %>
-  </div>
+  <!-- TODO: Print out all languages, which are already mastered by the user - It should be possible to add new languages. -->
 
   <div class="form-group">
     <%= f.label "Language of study", class: 'control-label' %><br>
-    <%= f.select(:study_language, ["English"], {}, {:class=>"form-control"}) %>
+    <%= f.select(:study_language, ["English"], {}, {:class=>"form-control selectPicker"}) %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

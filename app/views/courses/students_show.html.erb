@@ -6,18 +6,14 @@
   <table class="table table-striped" , style="width:80%">
     <% counter = 0 %>
     <% @domains.each do |domain| %>
-        <tr>
-          <td>
-            <%= link_to domain.screening_title, {
-                :controller => 'domains',
-                :slug => domain.slug,
-                :action => 'game_store'},
-                        :method => :get,
-                        class: "btn btn-success" %>
-          </td>
-          <td><%= @games_counts[counter] %> games available</td>
-        </tr>
-        <% counter += 1 %>
+    <tr>
+      <td>
+        <%= link_to domain.screening_title, { :controller => 'domains', :slug => domain.slug, :action => 'game_store'}, :method => :get, class: "btn btn-success" %>
+      </td>
+      <td><%= @games_counts[counter] %>
+        games available</td>
+    </tr>
+    <% counter += 1 %>
     <% end %>
   </table>
 </div>
