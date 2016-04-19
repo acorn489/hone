@@ -3,7 +3,8 @@
 Hone is a GamES (GAM)ified (E)lementary (S)chool MOOC for children who do not have access to schools.
 
 {<img src="https://travis-ci.org/prismacon/hone.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/prismacon/hone]
-{<img src="https://img.shields.io/badge/deployed%20to-Heroku-79589F.svg" alt="Deployed to Heroku" />}[http://hone-kids.herokuapp.com/]
+{<img src="https://img.shields.io/badge/Heroku-staging-79589F.svg" alt="Heroku staging" />}[http://hone-kids-staging.herokuapp.com/]
+{<img src="https://img.shields.io/badge/Heroku-production-79589F.svg" alt="Heroku production" />}[http://hone-kids.herokuapp.com/]
 
 {<img src="https://raw.githubusercontent.com/prismacon/hone/master/hone-screen.png" alt="Hone Screenshot" />}[https://raw.githubusercontent.com/prismacon/hone/master/hone_screen.png]
 
