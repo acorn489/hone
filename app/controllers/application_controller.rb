@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def title(text)
+    content_for :title, text
+  end
+
   %w(Student Developer Admin).each do |k|
     define_method "current_#{k.underscore}" do
       current_user if current_user.is_a?(k.constantize)
