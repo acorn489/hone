@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_ad0f4d2d",
+        "filename": "app/views/skill/show.html.erb",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-19T10:48:01Z",
+      "side": 1,
+      "message": "why?",
+      "range": {
+        "startLine": 2,
+        "startChar": 27,
+        "endLine": 2,
+        "endChar": 39
+      },
+      "revId": "994502007cecfacba0b383327024ec220f939f82",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_8d1ec961",
+        "filename": "app/views/skill/show.html.erb",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-19T10:48:01Z",
+      "side": 1,
+      "message": "insert a partial instead..",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 27
+      },
+      "revId": "994502007cecfacba0b383327024ec220f939f82",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
