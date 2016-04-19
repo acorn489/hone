@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_ed71d5a9",
+        "filename": "config/database.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-19T11:03:42Z",
+      "side": 1,
+      "message": "please don\u0027t commit something like that.",
+      "range": {
+        "startLine": 18,
+        "startChar": 10,
+        "endLine": 18,
+        "endChar": 25
+      },
+      "revId": "feaed0627463b66c29b58b761891786e5f78defe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
