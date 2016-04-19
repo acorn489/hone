@@ -45,6 +45,29 @@
       "revId": "994502007cecfacba0b383327024ec220f939f82",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_ad64ede4",
+        "filename": "app/views/skill/show.html.erb",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1008002
+      },
+      "writtenOn": "2016-04-19T11:04:28Z",
+      "side": 1,
+      "message": "I would also create a partial out of\n\n\u003csection id\u003d\"sectionTop\" class\u003d\"headImage\"\u003e\n  \u003cdiv class\u003d\"imgContainer\"\u003e\n    \u003cdiv id\u003d\"headerImage\"/\u003e\n  \u003c/div\u003e\n\u003c/section\u003e\n\n\nand reuse it instead.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 10
+      },
+      "revId": "994502007cecfacba0b383327024ec220f939f82",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
