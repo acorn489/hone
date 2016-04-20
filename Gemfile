@@ -55,3 +55,4 @@ gem 'doorkeeper'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'responders', '~> 2.0'
 gem 'rails_12factor', group: :production
+gem 'high_voltage'
