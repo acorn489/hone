@@ -29,14 +29,20 @@ Install {Node.js}[https://nodejs.org/en/].
 * Create a database named +hone2_0_development+ and grant rights to an user of your choice.
 
 === Running Hone
-Now that you have all the dependencies set up you can get Hone up and running:
+Now that you have all the dependencies set up you can get Hone up and running.
+
+First create +config/local_env.yml+. It will be used to configure project environment variables for convenience. For now
+it only contains MySQL configuration. This is how its contents might look like:
+
+  MYSQL_SOCKET: /var/run/mysqld/mysqld.sock
+  HONE2_0_DEVELOPMENT_DATABASE_USERNAME: root
+  HONE2_0_DEVELOPMENT_DATABASE_PASSWORD: password
+
+Now proceed with starting Hone:
 
   $ git clone https://github.com/prismacon/hone.git
   $ npm install
   $ npm start
-  $ # Refer to your OS docs on how to export environment variables.
-  $ export HONE2_0_DEVELOPMENT_DATABASE_PASSWORD='yourdbpass'
-  $ export HONE2_0_DEVELOPMENT_DATABASE_USERNAME='yourdbuser'
   $ rake db:migrate
   $ rake db:seed
   $ rails s
