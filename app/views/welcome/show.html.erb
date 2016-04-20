@@ -1,4 +1,5 @@
 <% content_for :title, "Home" %>
+<% content_for :body_class, "footer-sticks-to-content" %>
 <%= render partial: "partials/welcomeHeaderImage" %>
 <div class="container welcome">
   <div class="row">
@@ -25,5 +26,13 @@
       <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-lg btn-primary-outline' %>
     </div>
   </div>
-
+</div>
+<div class="row weSupport">
+  <h2>We support</h2>
+  <a href="http://www.globalgoals.org/">
+    <img src="<%= gulp_asset_path('images/global-goals.png') %>" alt="">
+  </a>
+  <a href="http://www.globalgoals.org/global-goals/quality-education/">
+    <img src="<%= gulp_asset_path('images/goal4-qe.png') %>" alt="">
+  </a>
 </div>
