@@ -1,10 +1,29 @@
 <% content_for :title, "Home" %>
-<div class="jumbotron">
-  <div class="container welcome">
-    <h1>Welcome!</h1>
-    <p>Register to get started.</p>
-    <p>
-      <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
-    </p>
+<div class="container welcome">
+  <%= render partial: "partials/welcomeHeaderImage" %>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="<%= gulp_asset_path('images/welcome_standards_icon.png') %>" alt="">
+      <h2>Backed by standards</h2>
+      <p>Game content of Hone is currently based on the <a href="http://www.corestandards.org/">Common Core Standards Initiative.</a> Games should provide quality educational experience. More local country standards support to come! </p>
+    </div>
+    <div class="col-md-4">
+      <img src="<%= gulp_asset_path('images/welcome_play_icon.png') %>" alt="">
+      <h2>Play now!</h2>
+      <p>If you are a student, register now to play! Fun and knowledge await you!</p>
+    </div>
+    <div class="col-md-4">
+      <img src="<%= gulp_asset_path('images/welcome_api_icon.png') %>" alt="">
+      <h2>Are you a developer?</h2>
+      <p><a href="">See our documentation</a> to learn how to use our game API to integrate your game with Hone!</p>
+    </div>
+
+    <div class="col-md-4">
+      <img src="<%= gulp_asset_path('images/welcome_start_icon.png') %>" alt="">
+      <h2>Eager to start?</h2>
+      <p>Signing up only takes a few minutes!</p>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-lg btn-primary-outline' %>
+    </div>
   </div>
+
 </div>

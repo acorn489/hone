@@ -1,3 +1,22 @@
 .welcome {
   text-align: center;
+  .headImage#sectionTop {
+    h1 {
+      text-align: left;
+      color: white;
+      padding: 24px;
+      margin: 0;
+    }
+  }
+  .col-md-4 {
+    margin-top: 58px;
+    text-align: center;
+    img {
+      display: inline;
+      margin: 28px auto;
+    }
+    a.btn {
+      margin: 28px;
+    }
+  }
 }
