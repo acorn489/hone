@@ -27,60 +27,78 @@
       </div>
       <div class="game-list">
         <% @games.each do |game| %>
-          <% if !game.android_link&.empty? %>
-            <div class="game android_link">
-              <a href="<%= game.android_link %>" target="<%= game.android_link %>">
-                <div class="header">
-                  <p class="title">
-                    <%= game.title %>
-                  </p>
+        <% if !game.android_link&.empty? %>
+        <div class="game android_link">
+          <a href="<%= game.android_link %>" target="<%= game.android_link %>">
+            <div class="course">
+              <div class="imgContainer">
+                <!-- mathIcon should be replaced by the game icon -->
+                <div class="mathIcon">
+                  <div class="color-box transparent-red"></div>
                 </div>
-                <div class="body">
-                  <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
-                </div>
-                <div class="footer">
-                  <div class="rating">
-                  </div>
-                </div>
-              </a>
+              </div>
+              <div class="details">
+                <div class="title">
+                  <%= game.title %></div>
+              </div>
             </div>
-          <% end %>
-          <% if !game.ios_link&.empty? %>
-            <div class="game ios_link">
-              <a href="<%= game.ios_link %>" target="<%= game.ios_link %>">
-                <div class="header">
-                  <p class="title">
-                    <%= game.title %>
-                  </p>
-                </div>
-                <div class="body">
-                  <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
-                </div>
-                <div class="footer">
-                  <div class="rating">
-                  </div>
-                </div>
-              </a>
+            <div class="body">
+              <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
             </div>
-          <% end %>
-          <% if !game.web_link&.empty? %>
-            <div class="game web_link">
-              <a href="<%= game.web_link %>" target="<%= game.web_link %>">
-                <div class="header">
-                  <p class="title">
-                    <%= game.title %>
-                  </p>
-                </div>
-                <div class="body">
-                  <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
-                </div>
-                <div class="footer">
-                  <div class="rating">
-                  </div>
-                </div>
-              </a>
+            <div class="footer">
+              <div class="rating"></div>
             </div>
-          <% end %>
+          </a>
+        </div>
+        <% end %>
+        <% if !game.ios_link&.empty? %>
+        <div class="game ios_link">
+          <a href="<%= game.ios_link %>" target="<%= game.ios_link %>">
+            <div class="course">
+              <div class="imgContainer">
+                <!-- mathIcon should be replaced by the game icon -->
+                <div class="mathIcon">
+                  <div class="color-box transparent-red"></div>
+                </div>
+              </div>
+              <div class="details">
+                <div class="title">
+                  <%= game.title %></div>
+              </div>
+            </div>
+            <div class="body">
+              <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
+            </div>
+            <div class="footer">
+              <div class="rating"></div>
+            </div>
+          </a>
+        </div>
+        <% end %>
+        <% if !game.web_link&.empty? %>
+        <div class="game web_link">
+          <a href="<%= game.web_link %>" target="<%= game.web_link %>">
+            <div class="course">
+              <div class="imgContainer">
+                <!-- mathIcon should be replaced by the game icon -->
+                <div class="mathIcon">
+                  <div class="color-box transparent-red"></div>
+                </div>
+              </div>
+              <div class="details">
+                <div class="title">
+                  <%= game.title %></div>
+              </div>
+            </div>
+            <div class="body">
+              <img src="<%= gulp_asset_path('images/math_man-icon.png') %>" alt=""/>
+            </div>
+            <div class="footer">
+              <div class="rating"></div>
+            </div>
+          </a>
+        </div>
+        <% end %>
         <% end %>
       </div>
     </section>
