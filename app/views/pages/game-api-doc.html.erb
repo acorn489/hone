@@ -1,0 +1,105 @@
+<%= content_for :title, 'Game API Documentation' %>
+<div class="container textContent docPage">
+  <h1>Integrating your first game</h1>
+  <p>Communication between 3rd party client and server is protected by OAuth 2.0 and the Implicit Grant strategy. Application
+    manufacturers must provide support in their clients to communicate to an OAuth 2.0 interface. We recommend using one of the
+    OAuth 2.0 providers available for your platform instead of implementing your own. Should you still need to do that, please
+    refer to step 2 for more information.</p>
+
+  <h2>1. Integrating the game in the platform</h2>
+  <p>In order to implement communication between game and server, following steps are required prior modifying an
+    existing application, as a <i>client identifier</i> and a <i>redirection URI</i> will be needed to proceed.</p>
+  <ol>
+    <li><b>Create a developer account on the Hone platform website.</b></li>
+    <li>
+      <b>Click on <i>Add a new game</i>.</b>
+      <img src="<%= gulp_asset_path('images/add_new_game.png') %>">
+      <b>Following data can be input:</b>
+      <ul>
+        <li><b>Title</b> <p>The title of the application. This is a required field.</p></li>
+        <li><b>Android/iOS/Web Link</b> <p>Link to a marketplace where the app is publicly available. It can also refer an
+          independent source. This link will be exposed when a game is selected from the grid with games. One of the three
+          fields must be filled.</p></li>
+        <li><b>Skills</b> <p>A skill menu will show all skills registered on the platform. One can select more than one skill
+        to be implemented by the game. Currently they cannot be changed upon creation. Atleast one skill must be chosen.</p></li>
+        <li><b>Redirect URI</b><p>This is a required field. The redirect URI is a required part of the OAuth authentication process.
+        After the user has been authenticated successfully, he will be redirected to this URL. On web this is usually an URL
+        with a <code>http://</code> or a <code>https://</code> protocol part. On Android one can set the URL through an
+        <a href="http://developer.android.com/guide/topics/manifest/data-element.html">Intent Filter</a>
+        and the <code>data</code> node. On iOS callback URLs are standardised by <a href="http://x-callback-url.com/">x-callback-url</a>.
+        </p>
+        </li>
+      </ul>
+    </li>
+    <li><b>Click on <i>Add my game</i>.</b></li>
+  </ol>
+  <p>
+    Upon successful submission the game page should show an additional game entry. It will contain an OAuth client id, which
+    has been generated upon the creation of the OAuth application:
+  </p>
+
+  <img src="<%= gulp_asset_path('images/all_games.png') %>">
+
+  <h2>2. Adding support for service communication (in case you don't use an OAuth 2.0 library)</h2>
+  Following scheme provides an overview of the OAuth2 implicit grant strategy process (excerpt from RFC 6749):
+  <img src="<%= gulp_asset_path('images/implicit_grant.png') %>">
+
+  Hone uses the doorkeeper gem as OAuth 2.0 provider. Following entry points are exposed by Doorkeeper:
+  <pre>    GET       /oauth/authorize/:code
+    GET       /oauth/authorize
+    POST      /oauth/authorize
+    DELETE    /oauth/authorize
+    POST      /oauth/token
+    POST      /oauth/revoke
+    GET       /oauth/token/info</pre>
+
+  <p>
+    To initiate communication, the application should provide a <i>Client identifier</i> and an <i>Redirection URI</i> to
+    the authorization server of Hone. These are obtained/set during registration. See <i>1.</i>
+  </p>
+  <ol>
+    <li>
+      The first step involves sending a GET request to <code>oauth/authorize?response_type=token&client_id=CLIENT_ID&redirect_uri=CALLBACK_URL</code>
+      where <code>CLIENT_ID</code> and <code>CALLBACK_URL</code> correspond to the values obtained during <i>1.</i>
+    </li>
+    <li>
+      If the user didn't authentificate before, he will be presented with a page requesting him to authorize the applicaiton or deny
+      it:
+      <img src="<%= gulp_asset_path('images/authorize_app.png') %>">
+    </li>
+    <li>
+      Tapping on <i>Authorize</i> will redirect the user agent to the callback URL. The access token will be provided as a parameter:
+        <code>CALLBACK_URL#token=TOKEN</code> where <code>CALLBACK_URL</code> corresponds to the value obtained during <i>1.</i> and <code>TOKEN</code>
+        is the provided token. The user agent will now follow the URL.
+    </li>
+    <li>
+      The application must strip the token on a dedicated webpage from the URL.
+    </li>
+    <li>
+      Application stores the token for following requests.
+    </li>
+    <li>
+      Requests providing a valid <code>access_token</code> requrest parameter will be authenticated.
+    </li>
+  </ol>
+
+  <h2>3. Communicating with the skill completion service</h2>
+
+  The skill completion service is very simple to use.
+
+  <pre>POST api/v1/complete_skill</pre>
+
+  Required parameters:
+  <ul>
+    <li><b>skill_id</b>: id of the skill which has been completed. Can be seen on the games list page.</li>
+    <li><b>access_token</b>: OAuth access token. Retrieved in <i>2.5.</i></li>
+  </ul>
+
+  <p>Upon skill completion, a wiggling icon will be shown on student's dashboard:</p>
+  <img src="<%= gulp_asset_path('images/wiggling_icon.png') %>">
+
+  <h2>4. A complete turnaround example</h2>
+  If you are still confused, take a look at our playground application on <a href="https://hone-demo-webapp.herokuapp.com/">https://hone-demo-webapp.herokuapp.com/</a>.
+  It can use arbitrary client and skill IDs so you can either use it to get more familiarized with the process or to play
+  with the source code publicly available on <a href="https://github.com/prismacon/hone-demo-webapp">GitHub</a>.
+</div>

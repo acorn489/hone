@@ -42,6 +42,13 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
+.textContent {
+  font-size: 110%;
+  h1, h2, h3, h4, h5 {
+    text-align: left;
+  }
+}
+
 /* START Bootstrap 4 primary outline buttons backport */
 
 .btn-primary-outline {
@@ -72,3 +79,4 @@ h1, h2, h3, h4, h5 {
 }
 
 /* END Bootstrap 4 primary outline buttons backport */
+
