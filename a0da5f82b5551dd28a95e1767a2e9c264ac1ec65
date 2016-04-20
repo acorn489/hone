@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_18131268",
+        "filename": "app/views/pages/imprint.html.erb",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001620
+      },
+      "writtenOn": "2016-04-20T07:09:45Z",
+      "side": 1,
+      "message": "shouldn\u0027t the text be surrounded by paragraphs?",
+      "revId": "a0da5f82b5551dd28a95e1767a2e9c264ac1ec65",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
