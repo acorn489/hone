@@ -2,6 +2,7 @@
 <% content_for :body_class, "footer-sticks-to-content" %>
 <%= render partial: "partials/welcomeHeaderImage" %>
 <div class="container welcome">
+  <%= render partial: "partials/flash" %>
   <div class="row">
     <div class="col-md-4">
       <img src="<%= gulp_asset_path('images/welcome_standards_icon.png') %>" alt="">
