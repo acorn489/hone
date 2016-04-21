@@ -52,7 +52,7 @@
         </div>
         <% end %>
         <% if !game.ios_link&.empty? %>
-        <div class="game ios_link">
+        <div class="game ios_link" <%= "hidden" if !game.android_link&.empty? %>>
           <a href="<%= game.ios_link %>" target="<%= game.ios_link %>">
             <div class="course">
               <div class="imgContainer">
@@ -76,7 +76,7 @@
         </div>
         <% end %>
         <% if !game.web_link&.empty? %>
-        <div class="game web_link">
+        <div class="game web_link" <%= "hidden" if !game.android_link&.empty? || !game.ios_link&.empty?%>>
           <a href="<%= game.web_link %>" target="<%= game.web_link %>">
             <div class="course">
               <div class="imgContainer">

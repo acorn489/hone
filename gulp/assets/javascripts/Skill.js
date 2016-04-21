@@ -1,6 +1,5 @@
 export default class Skill {
   constructor() {
-    $(".game.ios_link").hide();
     $("#platform_type input").on('change', function() {
       var platform_type = $('input[name="platform"]:checked').val();
       if (platform_type == "Android") {
