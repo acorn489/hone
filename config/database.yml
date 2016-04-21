@@ -13,12 +13,12 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: <%= ENV['HONE2_0_DEVELOPMENT_DATABASE_USERNAME'] %>
-  password: <%= ENV['HONE2_0_DEVELOPMENT_DATABASE_PASSWORD'] %>
-  socket: /tmp/mysql.sock
+  socket: <%= ENV['MYSQL_SOCKET'] %>
 
 development:
   <<: *default
+  username: <%= ENV['HONE2_0_DEVELOPMENT_DATABASE_USERNAME'] %>
+  password: <%= ENV['HONE2_0_DEVELOPMENT_DATABASE_PASSWORD'] %>
   database: hone2_0_development
 
 # Warning: The database defined as "test" will be erased and
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: hone2_0_production
-  username: hone2_0
-  password: <%= ENV['HONE2_0_DATABASE_PASSWORD'] %>
+  username: <%= ENV['HONE2_0_PRODUCTION_DATABASE_USERNAME'] %>
+  password: <%= ENV['HONE2_0_PRODUCTION_DATABASE_PASSWORD'] %>
