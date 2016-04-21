@@ -19,6 +19,9 @@ body.footer-sticks-to-content {
   font-family: 'Abel', sans-serif;
 }
 
+a {
+  outline: 0 !important;
+}
 
 .bg_greydark {
   background-color: #495052;
@@ -98,4 +101,3 @@ h1, h2, h3, h4, h5 {
 }
 
 /* END Bootstrap 4 primary outline buttons backport */
-
