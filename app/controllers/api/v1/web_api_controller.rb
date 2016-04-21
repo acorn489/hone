@@ -3,8 +3,17 @@ module Api
     class WebApiController < BaseController
       before_action :authenticate_user!
 
+      def collect_skill
+        unless params[:id].present?
+          return render nothing: true, status: :bad_request
+        end
+        student_skill = CompletedStudentSkill.find_by(skill_id: params[:id])
+        student_skill.collected = true
+        student_skill.save
+        render nothing: true, status: :ok
+      end
+
       def skills
-        return not_authorized unless current_user
         unless params[:course_id].present?
           return render nothing: true, status: :bad_request
         end

@@ -73,6 +73,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       get 'skills' => 'web_api#skills'
+      post 'collect_skill' => 'web_api#collect_skill'
       post 'complete_skill' => 'game_api#complete_skill'
     end
   end

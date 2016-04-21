@@ -5,6 +5,31 @@ describe 'Web API', :type => :request do
   include_context "api request authentication helper methods"
   include_context "api request global before and after hooks"
 
+  describe 'POST /api/v1/collect_skill' do
+    let!(:developer) { FactoryGirl.create :developer}
+    let!(:student) { FactoryGirl.create :student }
+    let!(:skill) { FactoryGirl.create :skill }
+
+    it 'fails with status 400 when id missing' do
+      sign_in(student)
+
+      post "/api/v1/collect_skill"
+
+      expect(response.status).to eq 400
+    end
+
+    it 'sets collected skill flag to true' do
+      sign_in(student)
+      completed_student_skill = FactoryGirl.create :completed_student_skill, {student_id: student.id, skill_id: skill.id}
+
+      post "/api/v1/collect_skill", {id: skill.id}
+
+      expect(response.status).to eq 200
+      expect(CompletedStudentSkill.find_by(id: completed_student_skill.id).collected).to eq true
+    end
+
+  end
+
   describe 'GET /api/v1/skills' do
     let!(:developer) { FactoryGirl.create :developer}
     let!(:student) { FactoryGirl.create :student }
