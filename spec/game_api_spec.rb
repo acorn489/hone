@@ -28,8 +28,17 @@ describe 'Game API', :type => :request do
       expect(response.status).to eq 200
     end
 
+    it 'adds a new completion entry even if it exists for another user' do
+      FactoryGirl.create :completed_student_skill, skill_id: 1, student_id: student.id + 1
+      expect {
+        post "/api/v1/complete_skill", {skill_id: 1}
+      }.to change { CompletedStudentSkill.count }
+      expect(response.status).to eq 200
+
+    end
+
     it 'doesnt add a new completion entry if one already exists' do
-      FactoryGirl.create :completed_student_skill, skill_id: 1
+      FactoryGirl.create :completed_student_skill, skill_id: 1, student_id: student.id
       expect {
         post "/api/v1/complete_skill", {skill_id: 1}
       }.not_to change { CompletedStudentSkill.count }

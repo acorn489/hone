@@ -10,7 +10,7 @@ module Api
         unless doorkeeper_token.application.owner.skills.find_by(id: params[:skill_id])
           return render text: "The skill doesn't belong to this game.", status: :bad_request
         end
-        unless CompletedStudentSkill.find_by(:skill_id => params[:skill_id])
+        unless CompletedStudentSkill.find_by(:skill_id => params[:skill_id], :student_id => doorkeeper_token.resource_owner_id)
           CompletedStudentSkill.create(
               :student_id => Student.find_by(:id => doorkeeper_token.resource_owner_id).id,
               :skill_id => params[:skill_id],
