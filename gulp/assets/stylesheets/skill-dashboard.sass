@@ -1,23 +1,35 @@
+.container.skills
+  width: 920px
+  margin-top: 24px
+
 .bg-counter
   width: 64px
 
 .grades
+  width: 300px
+  float: left
   text-align: center
   margin-left: 20px
   margin-bottom: 20px
 
   .grade
     display: inline-block
+    padding: 12px
+
+    img
+      height: 64px
 
     .grade-number
       background-image: url("images/bg-counter.png")
       width: 64px
       height: 28px
-      margin: 0 auto
+      margin: 12px auto
       font-size: 18px
       color: #F87D7D
 
 .standardsTable
+  float: right
+  width: 500px
   display: flex
   align-items: stretch
 
@@ -34,17 +46,14 @@
       padding: .75rem
       line-height: 1.5
       vertical-align: top
-      border-bottom: 1px solid #eceeef
       text-align: center
       cursor: pointer
-
-      &:last-child
-        border-bottom: 1px solid #eceeef
 
       img
         -moz-user-select: none
         -webkit-user-select: none
         user-select: none
+        height: 64px
 
 .nopadding
    padding: 0 !important
